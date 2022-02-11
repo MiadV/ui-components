@@ -16,7 +16,7 @@ const ${componentName}: React.FC<${componentName}Props> = (props) => {
   return <Ant${componentName} {...props} />;
 };
 
-${componentName}.propTypes = {};
+${componentName}.defaultProps = {};
 
 export default ${componentName};
 `.trim()
