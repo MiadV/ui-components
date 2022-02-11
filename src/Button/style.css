@@ -1,0 +1,43 @@
+.ant-btn {
+    @apply rounded-lg font-inter h-auto;
+    @apply inline-flex items-center justify-center border-none;
+    @apply focus:border-transparent focus:outline-none;
+  
+    &-lg {
+      @apply px-6 py-4 h-auto leading-6;
+    }
+  
+    &-circle {
+      @apply text-primary h-auto px-3 py-3;
+      @apply hover:text-primary hover:outline-primary hover:outline-1;
+      @apply focus:text-primary;
+    }
+  
+    &-primary {
+      @apply bg-primary text-white;
+      @apply hover:bg-primary hover:bg-opacity-70 hover:text-white;
+      @apply focus:bg-primary focus:text-white focus:outline-none;
+    }
+
+    &-text{
+       @apply text-primary;
+       @apply hover:text-primary;
+       @apply focus:text-primary;
+    }
+      
+    &.icon-start {		
+      @apply pl-4;
+  
+      svg:first-child{
+        @apply mr-2;
+      }
+    }
+      
+    &.icon-end {
+      @apply pr-4;
+  
+      svg:last-child{
+        @apply ml-2;
+      }
+    }
+  }

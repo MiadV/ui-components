@@ -4,7 +4,7 @@
   },
   "extends": ["plugin:react/recommended", "standard", "prettier", "prettier/react"],
   "parser": "@typescript-eslint/parser",
-	"settings": {
+  "settings": {
     "react": {
       "version": "detect"
     }
@@ -27,6 +27,9 @@
         "allow": ["warn", "error"]
       }
     ],
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": ["error"],
+    "import/no-named-default": 0,
     "import/order": [
       "error",
       {
@@ -44,11 +47,14 @@
           "caseInsensitive": true
         }
       }
-    ]
+    ],
+    "eol-last": ["error", "always"],
+    "object-curly-spacing": ["error", "always"]
   },
   "overrides": [
     {
-      "files": ["*.test.js"],
+      "files": ["*.test.js", "*.stories.@(ts|tsx|js|jsx|mjs|cjs)"],
+
       "env": {
         "jest": true
       }
