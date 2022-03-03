@@ -1,0 +1,46 @@
+@import 'antd/lib/form/style/index.css';
+
+.ant-form-item {
+  &-label {
+    @apply mb-2 leading-none;
+
+    label {
+      @apply text-xs font-inter text-neutral-500 leading-4;
+      @apply h-auto;
+
+      &:after {
+        content: normal;
+      }
+    }
+  }
+
+  &-explain {
+    .ant-form-item-explain-error {
+      @apply text-xs font-inter leading-4 text-red-600;
+      @apply pt-1;
+    }
+  }
+
+  &-with-help {
+    .ant-form-item-explain {
+      @apply min-h-0;
+    }
+  }
+
+  &-extra {
+    @apply text-xs font-inter leading-4 text-neutral-500;
+    @apply pt-1 min-h-0;
+  }
+
+  &-has-error {
+    .ant-select-selector,
+    .ant-input {
+      @apply border-red-600 !important;
+      @apply shadow-none !important;
+    }
+
+    .ant-input {
+      @apply text-red-600 !important;
+    }
+  }
+}

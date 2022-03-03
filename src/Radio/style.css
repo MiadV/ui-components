@@ -1,0 +1,47 @@
+.ant-radio {
+  &:hover {
+    .ant-radio-inner {
+      @apply border-slate-700;
+    }
+  }
+
+  &-wrapper {
+    @apply text-slate-700 font-inter font-normal leading-6 flex;
+  }
+
+  &-wrapper-disabled {
+    @apply text-neutral-300;
+  }
+
+  &-inner {
+    @apply border-slate-700;
+  }
+
+  &-inner::after {
+    @apply bg-slate-700;
+  }
+
+  &-checked {
+    .ant-radio-inner {
+      @apply border-slate-700;
+    }
+  }
+
+  &-checked::after {
+    @apply border-slate-700 border-none;
+  }
+
+  &-disabled {
+    .ant-radio-inner {
+      @apply bg-white border-neutral-300;
+    }
+
+    .ant-radio-inner::after {
+      @apply bg-neutral-300 border-neutral-300;
+    }
+  }
+
+  &-input:focus + &-inner {
+    @apply border-slate-700 shadow-none;
+  }
+}
