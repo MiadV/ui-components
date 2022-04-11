@@ -1,0 +1,64 @@
+@import 'antd/lib/style/default.css';
+@import 'antd/lib/dropdown/style/index.css';
+@import '../Button/style.css';
+
+.ant-dropdown{
+
+    &-menu{
+        @apply rounded-lg;
+
+        &-item{
+            @apply font-inter text-sm text-neutral-700;
+            @apply mx-2 p-2 rounded; 
+            @apply hover:bg-neutral-100; 
+        }
+
+        &-item-group-title{
+            @apply font-inter text-sm text-neutral-700;
+            @apply mx-2 p-2 rounded; 
+        }
+
+        &-submenu-title{
+            @apply font-inter text-neutral-700;
+            @apply hover:bg-neutral-100;
+            @apply mx-2 p-2 rounded;
+        }
+
+        &-submenu-expand-icon{
+            @apply right-4 !important;
+
+            .anticon{
+                @apply align-middle;
+            }
+            .anticon > svg{
+                @apply h-4 w-4 text-transparent;
+                background-image: var(--ic-caret-right-16-n700);
+            }
+        }
+
+        &-submenu-popup ul{
+            @apply ml-3 !important;
+        }
+
+        &-item-divider{
+            @apply mx-2 my-0 bg-neutral-300;
+        }
+
+        &-item-selected, &submenu-title-selected {
+            @apply bg-transparent text-neutral-700 font-semibold;
+        }
+
+        &-submenu-selected &-submenu-title {
+            @apply text-neutral-700 font-semibold;
+        }
+
+        &-item-selected::after{
+            @apply h-4 pl-1;
+            content:var(--ic-check-16-n700);
+        }
+
+        &-item-disabled{
+            @apply text-neutral-300;
+        }
+    }
+}

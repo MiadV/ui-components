@@ -1,0 +1,142 @@
+@import 'antd/lib/style/default.css';
+@import 'antd/lib/layout/style/index.css';
+@import '../Menu/style.css';
+
+.ant-layout {
+  background-color: #f0ebee;
+  @apply font-inter;
+
+  & .ant-layout-sider {
+    & .ui-sider-header {
+      @apply flex items-center h-16;
+
+      & > .ant-avatar {
+        min-width: 32px;
+        @apply ml-4;
+      }
+
+      & > .ant-typography {
+        @apply ml-2 font-semibold text-slate-700 whitespace-nowrap;
+      }
+
+      &-button {
+        @apply ml-auto mr-4;
+      }
+    }
+
+    &.ant-layout-sider-collapsed {
+      & .ui-sider-header {
+        @apply justify-center;
+
+        & > .ant-avatar {
+          @apply hidden !important;
+        }
+
+        & > .ant-typography {
+          @apply hidden;
+        }
+
+        &-button {
+          @apply mr-auto;
+        }
+      }
+
+      & .ui-btn-log-out {
+        @apply hidden;
+      }
+    }
+
+    & .ant-menu-inline {
+      & .ant-menu-item-group-list .ant-menu-submenu-title,
+      & .ant-menu-submenu-title {
+        @apply pr-4;
+      }
+
+      &.ant-menu-sub {
+        @apply bg-white;
+      }
+    }
+
+    & .ant-menu-item {
+      &::after {
+        @apply border-slate-700 left-0;
+        right: unset;
+      }
+    }
+
+    & .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+      @apply bg-slate-100 text-slate-700 font-semibold;
+    }
+
+    & .ant-layout-sider-children {
+      @apply flex flex-col;
+
+      & .ui-bottom-pane {
+        @apply mt-auto flex flex-col px-2 pt-0 pb-5;
+
+        & .ui-btn-log-out {
+          @apply self-end w-full overflow-hidden whitespace-nowrap text-left pr-2 pl-8;
+        }
+      }
+    }
+
+    &-light + .ant-layout {
+      & > .ant-layout-header {
+        @apply bg-slate-100;
+      }
+
+      &.staging > .ant-layout-header {
+        @apply bg-slate-700;
+
+        & > .ui-header-end {
+          & > .ant-select {
+            & .ant-select-selector,
+            & .ant-select-arrow {
+              @apply text-white;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  & .ant-layout-header {
+    @apply flex px-8;
+
+    & > .ui-header-end {
+      @apply ml-auto flex items-center;
+
+      & > .ant-select {
+        @apply bg-transparent;
+
+        & .ant-select-selector {
+          @apply bg-transparent border-0;
+        }
+
+        &-focused:not(.ant-select-disabled).ant-select:not(.ant-select-customize-input) .ant-select-selector {
+          @apply border-r-0 !important;
+        }
+      }
+    }
+  }
+
+  & .ui-page-title {
+    @apply text-slate-700 mb-1 mt-6;
+  }
+  & .ui-page-subtitle {
+    @apply text-neutral-400;
+  }
+}
+
+/* floating sider */
+.ant-layout.ant-layout-has-sider {
+  @apply relative;
+
+  & .ant-layout-sider-light {
+    @apply absolute left-0 top-0 bottom-0 z-[1];
+
+    & + .ant-layout {
+      @apply ml-20;
+    }
+  }
+}

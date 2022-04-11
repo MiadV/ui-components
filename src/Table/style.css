@@ -1,0 +1,205 @@
+@import 'antd/lib/style/default.css';
+@import 'antd/lib/table/style/index.css';
+@import '../Button/style.css';
+@import '../Empty/style.css';
+@import '../Radio/style.css';
+@import '../Checkbox/style.css';
+@import '../Dropdown/style.css';
+@import 'antd/lib/spin/style/index.css';
+@import '../Pagination/style.css';
+@import '../Tooltip/style.css';
+@import '../Input/style.css';
+@import '../Tree/style.css';
+
+.ant-table-wrapper {
+  .ant-table {
+    @apply font-inter;
+    @apply rounded-xl border border-slate-100 overflow-hidden;
+
+    .ant-table-container {
+      &::before {
+        @apply rounded-tl-xl;
+      }
+
+      table > thead > tr:first-child th:first-child {
+        @apply rounded-tl-xl;
+      }
+
+      table > thead > tr:first-child th:last-child {
+        @apply rounded-tr-xl;
+      }
+    }
+
+    .ant-table-thead {
+      tr {
+        th {
+          @apply bg-transparent rounded-tr-xl;
+          @apply font-semibold text-sm text-neutral-700;
+
+          &:not(:last-child):not(.ant-table-selection-column):not(.ant-table-row-expand-icon-cell):not([colspan])::before {
+            @apply bg-neutral-300;
+          }
+
+          &.ant-table-cell-fix-right-first,
+          &.ant-table-cell-scrollbar {
+            @apply bg-white;
+          }
+        }
+
+        .ant-table-filter-trigger {
+          @apply text-neutral-700;
+          &.active {
+            @apply text-primary;
+          }
+        }
+      }
+
+      .ant-table-column-sorter,
+      .ant-table-column-sorter-full {
+        @apply flex;
+        @apply items-center;
+
+        svg {
+          @apply hidden;
+        }
+      }
+
+      .ant-table-column-sort {
+        .ant-table-column-title {
+          .sort-ascend,
+          .sort-descend {
+            polyline,
+            line {
+              @apply transition-all;
+              @apply duration-300;
+            }
+          }
+
+          .sort-descend {
+            polyline,
+            line {
+              &:last-of-type {
+                @apply stroke-primary;
+              }
+            }
+          }
+
+          .sort-ascend {
+            polyline,
+            line {
+              &:first-of-type {
+                @apply stroke-primary;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .ant-table-tbody {
+      td {
+        @apply font-normal;
+        @apply text-neutral-700;
+
+        &:last-child {
+          a {
+            @apply text-primary;
+            @apply font-semibold;
+          }
+        }
+
+        &.ant-table-cell-with-append {
+          @apply pl-10;
+          svg {
+            @apply absolute top-0 bottom-0 left-3 m-auto cursor-pointer;
+            @apply transition-all;
+          }
+        }
+      }
+
+      .ant-table-row {
+        &:hover {
+          td {
+            @apply bg-neutral-100;
+          }
+        }
+
+        &.ant-table-row-selected {
+          td {
+            @apply bg-slate-100;
+          }
+        }
+
+        &:not(.ant-table-row-level-0) {
+          .ant-table-cell-with-append {
+            @apply pl-14;
+          }
+        }
+      }
+    }
+
+    /* affects thead and tbody */
+    .drag-visible {
+      @apply pl-6;
+      svg {
+        @apply cursor-grab;
+        @apply m-auto;
+      }
+    }
+
+    /* affects thead and tbody */
+    .ant-table-selection-column {
+      @apply pl-5;
+    }
+  }
+}
+
+.ant-table-filter-dropdown {
+  @apply shadow-md;
+  @apply rounded-lg;
+
+  .ant-table-filter-dropdown-tree {
+    @apply pt-3 pr-3 pb-0 pl-3;
+  }
+
+  .ant-table-filter-dropdown-btns {
+    @apply border-none rounded-b-lg p-2;
+    @apply justify-end;
+  }
+}
+
+/* when dragging items in table */
+.row-dragging {
+  @apply font-inter flex items-center border border-slate-100 bg-neutral-100 cursor-grabbing;
+  /* hardcoded to none in antd codebase */
+  @apply pointer-events-auto !important;
+
+  td {
+    &:not(:first-child) {
+      @apply m-auto;
+    }
+    @apply m-[30px];
+  }
+
+  .ant-table-cell {
+    a {
+      @apply text-primary;
+      @apply font-semibold;
+    }
+  }
+
+  .ant-table-cell-fix-right,
+  .ant-table-cell-fix-left {
+    @apply bg-transparent;
+  }
+
+  .ant-table-cell-with-append {
+    @apply pl-10;
+    @apply relative;
+
+    svg {
+      @apply absolute top-0 bottom-0 left-3 m-auto cursor-pointer;
+      @apply transition-all;
+    }
+  }
+}

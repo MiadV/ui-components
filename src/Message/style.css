@@ -1,0 +1,49 @@
+@import 'antd/lib/style/default.css';
+@import 'antd/lib/message/style/index.css';
+
+.ant-message {
+  @apply font-inter;
+
+  .ant-message-notice-content {
+    @apply pl-[unset];
+    @apply pr-3;
+    @apply py-2;
+    @apply rounded-lg;
+    @apply shadow-md;
+
+    .ant-message-custom-content {
+      @apply text-sm;
+      @apply flex;
+      @apply items-center;
+      @apply text-slate-700;
+
+      &.ant-message-info,
+      &.ant-message-loading {
+        svg {
+          @apply mx-[10px];
+        }
+      }
+
+      &.ant-message-success {
+        svg {
+          @apply text-green-500;
+          @apply mx-[10px];
+        }
+      }
+
+      &.ant-message-error {
+        svg {
+          @apply text-red-600;
+          @apply mx-[10px];
+        }
+      }
+
+      &.ant-message-warning {
+        svg {
+          @apply text-yellow-400;
+          @apply mx-[10px];
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+@import 'antd/lib/style/default.css';
+@import '../Popover/style.css';
+@import '../Button/style.css';
+@import 'antd/lib/popconfirm/style/index.css';
+
+.ant-popconfirm {
+  .ant-popover-content {
+    @apply w-72;
+  }
+
+  .ant-popover-inner-content {
+    @apply p-3;
+  }
+  .ant-popover-inner {
+    @apply rounded-lg;
+  }
+  .ant-popover-message {
+    @apply flex font-inter text-xs pb-4;
+
+    svg {
+      @apply self-center text-slate-700;
+    }
+
+    .ant-popover-message-title {
+      @apply pl-1.5 text-slate-700;
+    }
+  }
+
+  .icon-none {
+    @apply hidden;
+  }
+}

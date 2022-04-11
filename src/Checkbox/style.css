@@ -1,0 +1,70 @@
+@import 'antd/lib/checkbox/style/index.css';
+
+.ant-checkbox {
+  &:hover {
+    .ant-checkbox-inner {
+      @apply border-slate-700;
+    }
+  }
+
+  &-wrapper {
+    @apply text-slate-700 font-inter font-normal;
+  }
+
+  &-wrapper:hover {
+    .ant-checkbox-inner {
+      @apply border-slate-700;
+    }
+  }
+
+  &-checked {
+    .ant-checkbox-inner {
+      @apply bg-slate-700 border-slate-700;
+    }
+    .ant-checkbox-inner::after {
+      @apply box-border;
+    }
+  }
+
+  &-checked::after {
+    @apply border-none;
+  }
+
+  &-disabled {
+    .ant-checkbox-inner {
+      @apply bg-white border-neutral-200;
+    }
+    .ant-checkbox-inner::after {
+      @apply border-white;
+    }
+  }
+
+  &-disabled.ant-checkbox-checked .ant-checkbox-inner {
+    @apply bg-neutral-300;
+  }
+
+  &-disabled.ant-checkbox-checked .ant-checkbox-inner::after {
+    @apply border-white;
+  }
+
+  &-input {
+    @apply m-0;
+  }
+
+  &-input:focus + &-inner {
+    @apply border-slate-700;
+  }
+
+  &-input + &-inner {
+    @apply border-slate-700 rounded;
+  }
+
+  &-indeterminate {
+    .ant-checkbox-inner::after {
+      @apply bg-slate-700 border-neutral-300;
+    }
+    .ant-checkbox-inner {
+      @apply border-neutral-300;
+    }
+  }
+}

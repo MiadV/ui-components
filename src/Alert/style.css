@@ -1,0 +1,66 @@
+@import 'antd/lib/alert/style/index.css';
+
+.ant-alert {
+  @apply border-none;
+  @apply rounded-lg;
+
+  .ant-alert-message {
+    @apply text-sm;
+    @apply font-semibold;
+  }
+
+  .ant-alert-description {
+    @apply text-sm;
+  }
+
+  .ant-alert-message,
+  .ant-alert-description {
+    @apply font-inter;
+  }
+
+  &.ant-alert-with-description {
+    .ant-alert-message {
+      @apply mb-0;
+    }
+  }
+
+  &.ant-alert-success {
+    @apply bg-green-50;
+
+    .ant-alert-message,
+    .ant-alert-description,
+    .ant-alert-icon {
+      @apply text-green-500;
+    }
+  }
+
+  &.ant-alert-info {
+    @apply bg-slate-100;
+
+    .ant-alert-message,
+    .ant-alert-description,
+    .ant-alert-icon {
+      @apply text-slate-700;
+    }
+  }
+
+  &.ant-alert-warning {
+    @apply bg-yellow-50;
+
+    .ant-alert-message,
+    .ant-alert-description,
+    .ant-alert-icon {
+      @apply text-yellow-400;
+    }
+  }
+
+  &.ant-alert-error {
+    @apply bg-red-50;
+
+    .ant-alert-message,
+    .ant-alert-description,
+    .ant-alert-icon {
+      @apply text-red-600;
+    }
+  }
+}

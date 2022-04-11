@@ -1,0 +1,18 @@
+@import 'antd/lib/avatar/style/index.css';
+
+.ant-avatar {
+  /* hardcoded to inline-block inside ant design's source code */
+  @apply flex !important;
+  @apply justify-center items-center;
+
+  &.ant-avatar-circle {
+    /* hardcoded to 18px inside ant design's source code as an inline style */
+    @apply text-sm !important;
+    @apply border border-white;
+    @apply bg-neutral-300;
+  }
+
+  &.ant-avatar-image {
+    @apply bg-slate-100;
+  }
+}

@@ -2,7 +2,7 @@
 
 .ant-form-item {
   &-label {
-    @apply mb-2 leading-none;
+    @apply pb-2 mb-0 leading-none;
 
     label {
       @apply text-xs font-inter text-neutral-500 leading-4;

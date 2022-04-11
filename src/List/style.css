@@ -1,0 +1,48 @@
+@import 'antd/lib/style/default.css';
+@import 'antd/lib/list/style/index.css';
+@import '../Empty/style.css';
+@import 'antd/lib/spin/style/index.css';
+@import '../Pagination/style.css';
+@import 'antd/lib/grid/style/index.css';
+
+.ant-list {
+  /* for both lists */
+  .ant-list-header,
+  .ant-list-footer,
+  .ant-list-item {
+    @apply font-inter;
+    @apply border-b-slate-100;
+  }
+
+  /* default list */
+  &.ant-list-bordered {
+    @apply rounded-lg;
+    @apply border-slate-100;
+
+    .ant-list-header,
+    .ant-list-footer {
+      @apply font-semibold;
+      @apply text-neutral-700;
+    }
+
+    .ant-list-item {
+      @apply text-neutral-700;
+    }
+  }
+
+  /* load more list */
+  .ant-list-item-meta {
+    .ant-list-item-meta-avatar {
+      @apply mr-2;
+    }
+
+    .ant-list-item-meta-title {
+      @apply font-semibold;
+      @apply text-neutral-700;
+    }
+
+    .ant-list-item-meta-description {
+      @apply text-neutral-500;
+    }
+  }
+}

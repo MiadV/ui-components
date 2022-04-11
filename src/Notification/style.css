@@ -1,0 +1,71 @@
+@import 'antd/lib/notification/style/index.css';
+
+.ant-notification {
+  .ant-notification-notice {
+    @apply rounded-lg;
+    @apply shadow-lg;
+    /* to match design */
+    /* hardcoded to 384px in antd source code */
+    /* max width is set to calc(100vw - 24px * 2) in antd source code */
+    @apply w-[unset];
+
+    .ant-notification-notice-message {
+      @apply font-bold;
+    }
+
+    .ant-notification-notice-description {
+      @apply leading-5;
+    }
+
+    .ant-notification-notice-message,
+    .ant-notification-notice-description {
+      @apply font-inter;
+      @apply text-neutral-700;
+      @apply w-72;
+    }
+
+    .ant-notification-notice-close {
+      @apply top-[0.8rem];
+      @apply text-neutral-400;
+    }
+  }
+
+  .ant-notification-notice-with-icon {
+    .ant-notification-notice-icon {
+      @apply ml-0;
+    }
+
+    .ant-notification-notice-message,
+    .ant-notification-notice-description {
+      @apply ml-8;
+    }
+  }
+
+  .ant-notification-notice-btn {
+    @apply mt-2.5;
+  }
+
+  .ant-notification-notice-info {
+    .ant-notification-notice-icon {
+      @apply text-neutral-700;
+    }
+  }
+
+  .ant-notification-notice-success {
+    .ant-notification-notice-icon {
+      @apply text-green-500;
+    }
+  }
+
+  .ant-notification-notice-error {
+    .ant-notification-notice-icon {
+      @apply text-red-600;
+    }
+  }
+
+  .ant-notification-notice-warning {
+    .ant-notification-notice-icon {
+      @apply text-yellow-400;
+    }
+  }
+}

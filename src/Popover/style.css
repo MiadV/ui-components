@@ -1,0 +1,30 @@
+@import 'antd/lib/style/default.css';
+@import 'antd/lib/popover/style/index.css';
+
+.ant-popover {
+  &-content {
+    @apply w-40;
+  }
+
+  &-inner {
+    @apply rounded-lg text-center;
+    @apply font-inter text-slate-700 text-xs;
+  }
+
+    &-inner-content{
+        @apply p-2;
+    }
+
+  &-inner-content > div > p:first-child {
+    @apply pb-2;
+  }
+
+    &-inner-content > div > p{
+        @apply mb-0;
+    }
+
+    &-title{
+        @apply font-semibold min-w-0;
+        @apply flex justify-center items-center;
+    }
+}

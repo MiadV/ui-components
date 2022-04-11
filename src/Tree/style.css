@@ -1,0 +1,46 @@
+@import 'antd/lib/style/default.css';
+@import 'antd/lib/tree/style/index.css';
+
+.ant-tree {
+  .ant-tree-treenode {
+    @apply items-center;
+    @apply pb-0;
+
+    .ant-tree-checkbox {
+      @apply mt-0;
+      @apply mr-2;
+
+      &.ant-tree-checkbox-checked {
+        .ant-tree-checkbox-inner {
+          @apply bg-slate-700;
+          @apply border-slate-700;
+
+          &::after {
+            @apply box-border;
+          }
+        }
+
+        &::after {
+          @apply border-none;
+        }
+      }
+    }
+
+    .ant-tree-checkbox-inner {
+      @apply border-slate-700;
+      @apply rounded;
+    }
+
+    .ant-tree-node-content-wrapper {
+      @apply text-slate-700;
+      @apply font-inter;
+      @apply font-normal;
+
+      @apply bg-white;
+
+      &:hover {
+        @apply bg-white;
+      }
+    }
+  }
+}

@@ -1,0 +1,160 @@
+@import '../variables.css';
+@import 'antd/lib/progress/style/index.css';
+
+.ant-progress {
+  @apply font-inter;
+}
+
+/* center line success/exception icons */
+.ant-progress {
+  &.ant-progress-line {
+    & .ant-progress-text {
+      @apply relative;
+    }
+
+    &.ant-progress-default {
+      & .ant-progress-text {
+        &::before {
+          position: absolute;
+          transform: translateY(-40%);
+        }
+      }
+    }
+    &.ant-progress-small {
+      & .ant-progress-text {
+        &::before {
+          position: absolute;
+          transform: translateY(-46%);
+        }
+      }
+    }
+  }
+}
+
+.ant-progress {
+  &.ant-progress-status-success.ant-progress-default {
+    &.ant-progress-circle {
+      & .ant-progress-text {
+        &::before {
+          content: var(--ic-check-24);
+        }
+      }
+    }
+  }
+
+  &.ant-progress-status-exception.ant-progress-default {
+    &.ant-progress-circle {
+      & .ant-progress-text {
+        &::before {
+          content: var(--ic-x-24);
+        }
+      }
+    }
+  }
+
+  &.ant-progress-status-success {
+    &.ant-progress-small.ant-progress-circle {
+      & .ant-progress-text {
+        &::before {
+          content: var(--ic-check-16);
+        }
+      }
+    }
+
+    &.ant-progress-line {
+      & .ant-progress-bg {
+        @apply bg-green-500;
+      }
+
+      & .ant-progress-text {
+        &::before {
+          content: var(--ic-check-outline-16);
+        }
+      }
+    }
+  }
+
+  &.ant-progress-status-exception {
+    &.ant-progress-small.ant-progress-circle {
+      & .ant-progress-text {
+        &::before {
+          content: var(--ic-x-16);
+        }
+      }
+    }
+
+    &.ant-progress-line {
+      & .ant-progress-bg {
+        @apply bg-red-600;
+      }
+
+      & .ant-progress-text {
+        &::before {
+          content: var(--ic-x-outline-16);
+        }
+      }
+    }
+  }
+
+  /* Hide default circle icon */
+  & .ant-progress-text {
+    & > .anticon {
+      @apply hidden;
+    }
+  }
+}
+
+.ant-progress-success-bg,
+.ant-progress-bg {
+  @apply bg-slate-700;
+}
+
+.ant-progress-line {
+  @apply flex items-center;
+
+  &.ant-progress-status-normal {
+    & .ant-progress-text {
+      @apply text-neutral-500;
+    }
+  }
+
+  & .ant-progress-inner {
+    @apply bg-white;
+  }
+}
+
+.ant-progress-circle {
+  &.ant-progress-status-normal {
+    & .ant-progress-text {
+      @apply text-slate-700;
+    }
+  }
+
+  & .ant-progress-circle-trail {
+    @apply stroke-white;
+  }
+}
+
+.ant-progress-status-normal {
+  & .ant-progress-inner:not(.ant-progress-circle-gradient) {
+    & .ant-progress-circle-path {
+      @apply stroke-slate-700;
+    }
+  }
+}
+
+.ant-progress-status-success {
+  & .ant-progress-inner:not(.ant-progress-circle-gradient) {
+    & .ant-progress-circle-path {
+      @apply stroke-green-500;
+    }
+  }
+}
+
+.ant-progress-status-exception {
+  & .ant-progress-inner:not(.ant-progress-circle-gradient) {
+    & .ant-progress-circle-path {
+      @apply stroke-red-600;
+    }
+  }
+}

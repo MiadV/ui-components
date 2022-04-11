@@ -1,0 +1,149 @@
+@import 'antd/lib/style/default.css';
+@import 'antd/lib/card/style/index.css';
+@import '../Tabs/style.css';
+@import 'antd/lib/grid/style/index.css';
+
+.ant-card {
+  @apply rounded-lg;
+  @apply w-[279px];
+  &-head {
+    @apply px-4 min-h-0;
+    &-wrapper > {
+      .ant-card-head-title {
+        @apply font-inter font-semibold text-neutral-700 text-sm;
+        @apply pt-4 pb-2 pr-1.5;
+      }
+      .ant-card-extra {
+        @apply py-0 mt-1;
+        @apply cursor-pointer;
+
+        button {
+          @apply mr-0;
+        }
+      }
+    }
+  }
+  &-body {
+    @apply font-inter text-sm text-neutral-700 ;
+    @apply py-0 px-4;
+  }
+  &-body > div > p:first-child {
+    @apply pt-2;
+  }
+  &-body > div > p {
+    @apply pt-1 mb-0 w-[247px];
+  }
+  &-body > div > p:last-child {
+    @apply pb-4;
+  }
+  &-body:only-child {
+    @apply p-4;
+    div > p:first-child {
+      @apply pt-0;
+    }
+    div > p {
+      @apply pt-1;
+    }
+    div > p:last-child {
+      @apply pb-0;
+    }
+  }
+  &-cover {
+    @apply rounded-t-lg;
+    img {
+      @apply rounded-t-lg;
+    }
+  }
+  &-cover ~ &-body {
+    @apply p-4;
+  }
+  &-meta {
+    @apply my-0;
+    &-avatar {
+      @apply pr-2;
+    }
+    &-detail {
+      .ant-card-meta-title {
+        @apply font-inter text-neutral-700 font-semibold text-sm w-48;
+        @apply mb-1 !important;
+      }
+      .ant-card-meta-description {
+        @apply font-inter text-neutral-700 text-sm w-48;
+      }
+    }
+  }
+  &-small {
+    @apply w-64;
+    .ant-card-head {
+      @apply px-2 min-h-0;
+      .ant-card-head-wrapper > {
+        .ant-card-head-title {
+          @apply font-inter font-semibold text-xs text-neutral-700 ;
+          @apply pt-2 pb-1 pr-1.5;
+        }
+        .ant-card-extra {
+          @apply py-0;
+        }
+      }
+    }
+    .ant-card-body {
+      @apply font-inter text-xs text-neutral-700 ;
+      @apply py-0 px-2;
+    }
+    .ant-card-body > div > p {
+      @apply pt-1 w-60;
+    }
+    .ant-card-body > div > p:last-child {
+      @apply pb-2;
+    }
+  }
+  &-contain-tabs {
+    .ant-card-head {
+      @apply border-b-transparent pb-4;
+      &-title {
+        @apply pt-4 pb-2 !important;
+      }
+    }
+    .ant-tabs-tab {
+      @apply pb-2  pt-2 text-sm !important;
+    }
+
+    .ant-tabs-tab + .ant-tabs-tab{
+      @apply ml-6;
+    }
+  }
+}
+
+
+.with-button {
+  .ant-card-head {
+    &-wrapper > {
+      .ant-card-head-title {
+        @apply pt-[18px] pb-3.5;
+      }
+    }
+  }
+}
+
+.ant-card-small.with-button {
+  .ant-card-head {
+    .ant-card-head-wrapper > {
+      .ant-card-head-title {
+        @apply pt-3 pb-[9px];
+      }
+    }
+  }
+}
+
+.with-meta-extra{
+  .ant-card-body{
+    @apply flex;
+
+    svg{
+      @apply cursor-pointer;
+    }
+  }
+  .ant-card-meta{
+    @apply w-full;
+  }
+}

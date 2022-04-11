@@ -2,7 +2,12 @@
   "env": {
     "browser": true
   },
-  "extends": ["plugin:react/recommended", "standard", "prettier", "prettier/react"],
+  "extends": [
+    "plugin:react/recommended",
+    "standard",
+    "prettier",
+    "prettier/react"
+  ],
   "parser": "@typescript-eslint/parser",
   "settings": {
     "react": {

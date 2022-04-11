@@ -1,0 +1,38 @@
+@import 'antd/lib/drawer/style/index.css';
+
+.ant-drawer {
+  &.ant-drawer-right,
+  &.ant-drawer-left {
+    .ant-drawer-content-wrapper {
+      /* hardcoded to 378px in antd codebase */
+      @apply w-96 !important;
+    }
+  }
+
+  &.ant-drawer-top,
+  &.ant-drawer-bottom {
+    .ant-drawer-content-wrapper {
+      /* hardcoded to 378px in antd codebase */
+      @apply h-[245px] !important;
+    }
+  }
+
+  .ant-drawer-header {
+    @apply border-b-neutral-100;
+  }
+
+  .ant-drawer-title,
+  .ant-drawer-body {
+    @apply font-inter;
+    @apply text-neutral-700;
+  }
+
+  .ant-drawer-title {
+    @apply text-base;
+    @apply font-bold;
+  }
+
+  .ant-drawer-body {
+    @apply text-sm;
+  }
+}

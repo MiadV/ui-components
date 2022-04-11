@@ -1,0 +1,252 @@
+@import 'antd/lib/style/default.css';
+@import 'antd/lib/upload/style/index.css';
+@import '../Button/style.css';
+@import '../Progress/style.css';
+@import '../Tooltip/style.css';
+
+@import '../variables.css';
+
+.ant-upload-list-picture-card-container {
+  @apply bg-white rounded-lg;
+}
+
+.ant-upload-list-picture-card {
+  &.ant-upload-list {
+    @apply flex flex-wrap;
+  }
+
+  & .ant-upload-list-item {
+    @apply rounded-lg p-1;
+
+    & .ant-upload-list-item-info {
+      @apply rounded;
+    }
+
+    & .ant-upload-list-item-thumbnail {
+      & > img {
+        @apply object-cover;
+      }
+    }
+  }
+
+  & .ant-upload-list-item-progress {
+    @apply w-4/5;
+    position: unset;
+  }
+
+  & .ant-upload-list-item {
+    &.ant-upload-list-item-uploading,
+    &.ant-upload-list-item-error {
+      @apply rounded p-0 m-1;
+
+      height: calc(100% - 8px);
+    }
+
+    &.ant-upload-list-item-error {
+      @apply border-red-600;
+
+      & .ant-upload-span {
+        @apply flex items-center;
+
+        & .ant-upload-list-item-thumbnail.ant-upload-list-item-file {
+          @apply hidden;
+        }
+
+        & .ant-upload-list-item-name {
+          @apply text-red-600 m-0 px-1;
+          position: unset;
+        }
+      }
+    }
+  }
+
+  & .ant-upload-list-item-uploading {
+    &.ant-upload-list-item {
+      @apply bg-neutral-100 border-none flex flex-col items-center justify-center;
+
+      & .ant-upload-list-item-info {
+        line-height: unset;
+
+        & .ant-upload-list-item-thumbnail {
+          @apply text-neutral-400;
+
+          line-height: unset;
+          opacity: unset;
+        }
+      }
+
+      & .ant-progress-line {
+        line-height: 0.85;
+      }
+    }
+  }
+}
+
+/* upload button */
+.ant-upload {
+  &.ant-upload-select-picture-card {
+    @apply border-none rounded-lg overflow-hidden;
+
+    order: -1;
+  }
+
+  &.ant-upload-drag {
+    @apply border-none rounded-lg overflow-hidden;
+
+    & .ant-upload[role='button'],
+    & .icon {
+      @apply flex justify-center;
+    }
+
+    & .icon > svg {
+      @apply text-primary mb-4;
+    }
+  }
+
+  &.ant-upload-select.ant-upload-select-text {
+    @apply block;
+
+    & .ant-upload[role='button'] {
+      @apply flex items-center justify-center h-8 rounded-lg;
+    }
+  }
+
+  & .ant-upload[role='button'] {
+    @apply flex items-center;
+    @apply font-inter bg-white;
+
+    & .ant-upload-text {
+      @apply text-neutral-700;
+    }
+
+    & .ant-upload-hint {
+      @apply text-neutral-400;
+    }
+
+    & > svg {
+      @apply text-primary mr-1;
+    }
+  }
+}
+
+/* preview & delete actions */
+.ant-upload-list-item-actions {
+  @apply flex items-center;
+
+  & > a {
+    @apply mr-2;
+  }
+
+  & > .ant-btn {
+    width: unset;
+    height: unset;
+  }
+}
+
+/* Upload list panel */
+.ant-upload-list.ant-upload-list-text {
+  @apply font-inter;
+
+  & a {
+    color: unset;
+  }
+
+  & .ant-upload-list-item {
+    height: unset;
+
+    &:not(.ant-upload-list-item-uploading) {
+      & .ant-upload-text-icon {
+        &:before {
+          @apply block;
+          transform: translateY(18%);
+        }
+
+        & .anticon {
+          @apply hidden;
+        }
+      }
+    }
+  }
+
+  & .ant-upload-list-item-card-actions-btn {
+    @apply opacity-100;
+
+    & > svg {
+      & path,
+      & line {
+        @apply stroke-neutral-700;
+      }
+    }
+
+    & > .anticon.anticon-delete > svg {
+      @apply hidden;
+    }
+  }
+
+  & .ant-upload-list-item-done {
+    & .ant-upload-span {
+      & > a {
+        @apply text-neutral-700;
+      }
+
+      & .ant-upload-text-icon {
+        &:before {
+          content: var(--ic-paperclip-16-n700);
+        }
+      }
+    }
+  }
+
+  & .ant-upload-list-item-uploading {
+    @apply mb-1;
+
+    & .ant-upload-span {
+      & > a {
+        @apply text-neutral-400;
+      }
+
+      & .ant-upload-list-item-card-actions {
+        & > button {
+          &:before {
+            @apply block bg-transparent opacity-100;
+
+            content: var(--ic-x-16-n400);
+          }
+
+          & > svg {
+            @apply hidden;
+          }
+        }
+      }
+    }
+
+    & .ant-upload-list-item-progress {
+      position: unset;
+
+      & .ant-progress-inner {
+        @apply block;
+      }
+    }
+  }
+
+  & .ant-upload-list-item-error {
+    & .ant-upload-text-icon {
+      &:before {
+        content: var(--ic-paperclip-16-r600);
+      }
+    }
+
+    & .ant-upload-list-item-name {
+      @apply text-red-600;
+    }
+
+    & .ant-upload-list-item-card-actions-btn {
+      & > svg {
+        & path,
+        & line {
+          @apply stroke-red-600;
+        }
+      }
+    }
+  }
+}

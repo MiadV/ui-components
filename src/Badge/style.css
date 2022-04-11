@@ -1,0 +1,43 @@
+@import 'antd/lib/badge/style/index.css';
+
+.ant-badge {
+  sup {
+    @apply top-[15%] right-[15%];
+
+    &.ant-badge-count {
+      @apply font-inter;
+    }
+
+    &.ant-badge-status-success {
+      @apply bg-green-500;
+    }
+
+    &.ant-badge-status-error {
+      @apply bg-red-600;
+    }
+
+    &.ant-badge-status-default {
+      @apply bg-neutral-400;
+    }
+
+    &.ant-badge-status-processing {
+      @apply absolute;
+      @apply bg-slate-700;
+      @apply shadow-[0px_0px_0px_1px];
+      @apply shadow-slate-300;
+
+      &::after {
+        @apply animate-none;
+        @apply border-none;
+      }
+    }
+
+    &.ant-badge-status-warning {
+      @apply bg-yellow-400;
+    }
+
+    &.ant-badge-dot {
+      @apply h-1/4 w-1/4;
+    }
+  }
+}

@@ -1,0 +1,34 @@
+@import "antd/lib/style/default.css";
+@import 'antd/lib/descriptions/style/index.css';
+
+.ant-descriptions{
+
+    &-header{
+        @apply mb-4;
+    }
+    
+    &-title{
+        @apply font-inter text-base font-bold text-neutral-700;
+    }
+
+    &-item{
+        
+        @apply font-inter font-normal;
+
+        &-label{
+            @apply text-xs text-neutral-400;
+        }
+
+        &-content{
+            @apply text-sm text-neutral-700;
+        }
+    }
+
+    &-row > th{
+        @apply pb-1;
+    }
+
+    &-row > td{
+        @apply pb-6;
+    }
+}

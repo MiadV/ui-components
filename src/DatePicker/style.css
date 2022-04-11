@@ -1,0 +1,193 @@
+@import 'antd/lib/style/default.css';
+@import 'antd/lib/date-picker/style/index.css';
+@import 'antd/lib/empty/style/index.css';
+@import '../variables.css';
+
+.ant-picker {
+  @apply h-10 px-4 border-transparent shadow-none rounded-lg;
+  @apply hover:border-neutral-300 focus:border-neutral-300;
+
+  &-panel-container {
+    @apply rounded-lg;
+  }
+
+  &-input > input {
+    @apply text-neutral-700 font-inter;
+  }
+
+  &-header {
+    @apply border-none;
+  }
+
+  &-range {
+    .ant-picker-active-bar {
+      @apply bg-slate-300;
+    }
+  }
+
+  &-range-separator {
+    @apply px-4 text-slate-300;
+  }
+
+  &-suffix {
+    @apply text-neutral-500;
+  }
+
+  &-clear > span > svg {
+    @apply h-4 w-4 text-transparent;
+    background-image: var(--ic-x-16-neutral);
+  }
+
+  &-cell-in-view.ant-picker-cell-today {
+    .ant-picker-cell-inner::before {
+      @apply rounded-full border-neutral-300;
+    }
+  }
+
+  &-cell .ant-picker-cell-inner {
+    @apply rounded-full inline-block w-auto;
+    @apply px-0;
+  }
+
+  &-year-panel .ant-picker-cell-inner {
+    @apply px-2.5 rounded-lg;
+  }
+
+  &-cell-in-view.ant-picker-cell-selected {
+    .ant-picker-cell-inner {
+      @apply bg-slate-700;
+    }
+  }
+
+  &-cell-in-view.ant-picker-cell-range-start:not(.ant-picker-cell-range-start-single)::before,
+  &-cell-in-view.ant-picker-cell-range-end:not(.ant-picker-cell-range-end-single)::before {
+    @apply bg-slate-700;
+  }
+
+  &-cell-in-view.ant-picker-cell-in-range::before {
+    @apply bg-slate-700;
+  }
+
+  &-cell-in-view.ant-picker-cell-in-range {
+    @apply text-white;
+  }
+
+  &-header-view button {
+    @apply text-slate-700 text-base font-inter font-bold uppercase leading-6;
+    @apply hover:opacity-80 hover:text-slate-700;
+  }
+
+  &-header-view button:not(:first-child) {
+    @apply ml-1;
+  }
+
+  &-cell-in-view.ant-picker-cell-range-start {
+    .ant-picker-cell-inner {
+      @apply bg-slate-700;
+    }
+  }
+
+  &-cell-in-view.ant-picker-cell-range-end {
+    .ant-picker-cell-inner {
+      @apply bg-slate-700;
+    }
+  }
+
+  &-cell-in-view.ant-picker-cell-range {
+    @apply hover:bg-slate-100;
+
+    .ant-picker-cell-range-hover {
+      @apply hover:bg-red-300;
+      @apply bg-pink-600;
+    }
+  }
+
+  &-cell-in-view.ant-picker-cell-in-range.ant-picker-cell-range-hover::before {
+    @apply bg-slate-400;
+    @apply hover:bg-pink-200;
+  }
+
+  &-cell-in-view.ant-picker-cell-range-start:not(.ant-picker-cell-range-start-single).ant-picker-cell-range-hover-start::before {
+    @apply bg-slate-700;
+  }
+
+  &-cell-in-view.ant-picker-cell-range-start:not(.ant-picker-cell-range-start-single):not(.ant-picker-cell-range-end)
+    .ant-picker-cell-inner {
+    @apply rounded-tl-2xl rounded-bl-2xl;
+  }
+
+  &-cell-in-view.ant-picker-cell-range-end:not(.ant-picker-cell-range-end-single):not(.ant-picker-cell-range-start)
+    .ant-picker-cell-inner {
+    @apply rounded-r-2xl;
+  }
+}
+
+.ant-form-item-has-error {
+  .ant-picker {
+    &-input > input {
+      @apply text-red-600;
+    }
+
+    &-separator {
+      @apply text-red-600;
+    }
+
+    &-range-separator {
+      @apply text-red-600;
+    }
+
+    &-suffix {
+      @apply text-red-600;
+    }
+
+    &-clear > span > svg {
+      background-image: var(--ic-x-16);
+    }
+  }
+}
+
+.ant-picker-body > table > thead > tr {
+  th:nth-child(n + 1):nth-child(-n + 8) {
+    @apply indent-96 leading-[0] overflow-hidden;
+  }
+
+  th:nth-child(n + 1):nth-child(-n + 8):after {
+    @apply block font-normal indent-0 leading-normal;
+  }
+
+  /* sunday */
+  th:nth-child(1):after {
+    content: 'S';
+    @apply text-primary;
+  }
+
+  /* monday */
+  th:nth-child(2):after {
+    content: 'M';
+  }
+
+  /* tuesday */
+  th:nth-child(3):after {
+    content: 'T';
+  }
+
+  /* wednesday */
+  th:nth-child(4):after {
+    content: 'W';
+  }
+
+  /* thursday */
+  th:nth-child(5):after {
+    content: 'T';
+  }
+
+  /* friday */
+  th:nth-child(6):after {
+    content: 'F';
+  }
+
+  /* saturday */
+  th:nth-child(7):after {
+    content: 'S';
+  }
+}

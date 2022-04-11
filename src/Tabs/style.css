@@ -1,0 +1,55 @@
+@import 'antd/lib/style/default.css';
+@import 'antd/lib/tabs/style/index.css';
+
+.ant-tabs {
+  &-nav {
+    @apply font-inter text-sm;
+  }
+
+  &-tab {
+    @apply text-neutral-400;
+    @apply hover:text-primary;
+    @apply pb-2;
+  }
+
+  &-top > .ant-tabs-nav::before {
+    @apply border-b-2 border-b-white;
+  }
+
+  .ant-tabs-tab-active {
+    @apply text-primary;
+    @apply hover:text-primary;
+
+    .ant-tabs-tab-btn {
+      @apply text-primary;
+      @apply focus:text-primary;
+    }
+  }
+
+  .ant-tabs-tab-btn {
+    @apply focus:text-primary;
+    @apply hover:text-primary;
+
+    span > .ant-badge {
+      @apply inline-grid pl-1.5;
+
+      .ant-badge-status-default {
+        @apply bg-primary;
+      }
+    }
+  }
+
+  .ant-tabs-ink-bar {
+    @apply bg-primary;
+  }
+
+  .ant-tabs-tab-disabled {
+    @apply text-neutral-300;
+    @apply hover:text-neutral-300 !important;
+
+    .ant-tabs-tab-btn {
+      @apply hover:text-neutral-300;
+      @apply hover:text-neutral-300;
+    }
+  }
+}

@@ -1,0 +1,358 @@
+@import 'antd/lib/style/default.css';
+@import 'antd/lib/menu/style/index.css';
+@import '../Tooltip/style.css';
+
+.ant-menu {
+  &.ant-menu-sub {
+    &.ant-menu-vertical:not(.ant-menu-inline) {
+      @apply shadow-md;
+    }
+  }
+}
+
+.ant-menu.ant-menu-light {
+  @apply font-inter;
+  @apply text-neutral-400;
+
+  /* affects top navigation and collapsed vertical navigation */
+  .ant-menu-item {
+    &:hover {
+      @apply text-slate-700;
+    }
+
+    &.ant-menu-item-selected {
+      @apply text-slate-700;
+      @apply font-semibold;
+    }
+  }
+
+  /* top navigation */
+  &.ant-menu-horizontal {
+    @apply rounded;
+    @apply bg-transparent;
+
+    .ant-menu-item {
+      &:hover {
+        &::after {
+          @apply border-none;
+        }
+      }
+
+      &::after {
+        @apply border-none;
+      }
+
+      &.ant-menu-item-selected {
+        &::after {
+          @apply border-none;
+        }
+      }
+
+      &.ant-menu-item-active {
+        &::after {
+          @apply border-none;
+        }
+      }
+    }
+
+    &.ant-menu-overflow {
+      /* when menu items do not overflow and become ellipsis */
+      .ant-menu-overflow-item.ant-menu-submenu.ant-menu-submenu-horizontal:not(.ant-menu-overflow-item-rest) {
+        .ant-menu-submenu-title {
+          @apply flex items-center flex-row-reverse;
+
+          > svg {
+            @apply ml-2;
+          }
+        }
+      }
+
+      /* ellipsis */
+      .ant-menu-overflow-item-rest {
+        @apply flex items-center;
+
+        .ant-menu-submenu-title {
+          @apply flex;
+        }
+      }
+    }
+
+    .ant-menu-item-disabled,
+    .ant-menu-submenu-disabled {
+      .ant-menu-title-content {
+        /* hardcoded to rgba(0, 0, 0, 0.25) !important */
+        @apply text-neutral-300 !important;
+      }
+    }
+
+    .ant-menu-submenu {
+      &.ant-menu-submenu-open {
+        svg {
+          @apply -rotate-180;
+        }
+      }
+    }
+  }
+
+  /* left side navigation */
+  &.ant-menu-inline {
+    @apply bg-white;
+
+    .ant-menu-submenu-selected {
+      .ant-menu-submenu-title {
+        @apply font-semibold;
+      }
+    }
+
+    /* affects all menu-item in and outside of ant-menu-sub */
+    .ant-menu-item {
+      /* when hover, background color overflows */
+      @apply w-auto;
+      @apply text-slate-700;
+
+      /* hardcoded to margin-top: 4px, margin-bottom: 8px */
+      @apply my-0;
+
+      /* hardcoded to 40px */
+      @apply h-11;
+
+      &:hover {
+        @apply bg-neutral-100;
+      }
+
+      &::after {
+        /* hardcoded to border-right: 2px solid #1890ff in antd codebase */
+        border-right: unset;
+      }
+
+      &.ant-menu-item-selected {
+        @apply bg-slate-100;
+        @apply font-semibold;
+
+        &::after {
+          /* hardcoded to border-right: 2px solid #1890ff in antd codebase */
+          border-right: unset;
+          @apply border-l-2;
+          @apply border-slate-700;
+          @apply left-0;
+        }
+      }
+    }
+  }
+
+  &:not(.ant-menu-horizontal) .ant-menu-item-selected {
+    @apply bg-slate-100 text-slate-700 font-semibold;
+  }
+
+  &.ant-menu-inline-collapsed {
+    .ant-menu-submenu-selected {
+      .ant-menu-submenu-title {
+        @apply bg-slate-100;
+        @apply relative;
+
+        &::after {
+          @apply content-[''];
+          @apply border-l-2;
+          @apply border-slate-700;
+          @apply top-0;
+          @apply left-0;
+          @apply h-full;
+          @apply bg-slate-100;
+          @apply absolute;
+        }
+      }
+    }
+  }
+
+  &.ant-menu-inline,
+  &.ant-menu-inline-collapsed {
+    @apply bg-transparent;
+    /* hardcoded to border-right: 2px solid #1890ff in antd codebase */
+    border-right: unset;
+
+    .ant-menu-submenu {
+      @apply bg-white;
+
+      &:first-child {
+        @apply rounded-t-[inherit];
+      }
+
+      &:last-child {
+        @apply rounded-b-[inherit];
+      }
+    }
+
+    :not(.ant-menu-submenu-disabled) {
+      .ant-menu-submenu-title {
+        /* only inline menu remain text color as slate-700 */
+        /* horizontal menu requires hover for text color to be slate-700 */
+        @apply text-slate-700;
+        @apply my-0;
+        @apply rounded-[inherit];
+
+        /* when hover, background color overflows */
+        @apply w-auto;
+
+        &:active {
+          /* hardcoded to border-right: 2px solid #1890ff in antd codebase */
+          border-right: unset;
+          @apply rounded;
+        }
+
+        &:hover {
+          @apply bg-neutral-100;
+        }
+      }
+    }
+
+    .ant-menu-submenu-selected {
+      &:first-child {
+        @apply rounded-tr-[inherit];
+        @apply rounded-tl-[inherit];
+
+        .ant-menu-submenu-title {
+          @apply rounded-tr-[inherit];
+          @apply rounded-tl-[inherit];
+        }
+      }
+
+      &:last-child {
+        @apply rounded-br-[inherit];
+        @apply rounded-bl-[inherit];
+
+        .ant-menu-submenu-title {
+          @apply rounded-br-[inherit];
+          @apply rounded-bl-[inherit];
+        }
+      }
+    }
+  }
+}
+
+.ant-menu-submenu {
+  > .ant-menu {
+    @apply rounded-lg;
+  }
+
+  /* for double dropdowns */
+  &.ant-menu-submenu-popup {
+    .ant-menu-item:hover {
+      @apply text-slate-700 bg-neutral-100;
+    }
+    .ant-menu-submenu.ant-menu-submenu-vertical {
+      .ant-menu-submenu-title {
+        @apply flex items-center;
+        .ant-menu-item-icon {
+          @apply hidden;
+        }
+        > svg {
+          @apply ml-2;
+        }
+      }
+    }
+  }
+}
+
+/* affects submenu in all menu types  */
+.ant-menu-light {
+  & .ant-menu-submenu {
+    /* hardcoded to color #1890ff in antd codebase */
+    @apply text-neutral-400 !important;
+
+    /* hardcoded to border-bottom: 2px solid #1890ff in antd codebase */
+    border-bottom: unset;
+
+    .ant-menu-sub {
+      /* hardcoded to 1rem */
+      @apply py-2 !important;
+
+      /* hardcoded to 0px */
+      @apply px-0 !important;
+    }
+
+    .ant-menu-item-group-title {
+      @apply text-slate-700;
+    }
+
+    &.ant-menu-submenu-selected {
+      .ant-menu-submenu-title {
+        @apply text-slate-700;
+        @apply font-semibold;
+      }
+    }
+
+    &.ant-menu-submenu-active {
+      @apply text-slate-700;
+      &::after {
+        /* hardcoded to border-bottom: 2px solid #1890ff in antd codebase */
+        border-bottom: unset !important;
+      }
+    }
+
+    &:hover {
+      @apply text-slate-700 !important;
+    }
+
+    &::after {
+      /* hardcoded to border-bottom: 2px solid #1890ff in antd codebase */
+      border-bottom: unset !important;
+    }
+
+    .ant-menu-submenu-title {
+      &:hover {
+        @apply text-slate-700;
+      }
+
+      > svg {
+        @apply transition-transform;
+        @apply ease-in-out;
+      }
+    }
+
+    /* popup when hover on ellipsis, submenu component */
+    &.ant-menu-submenu-popup {
+      > ul {
+        @apply py-4 px-3;
+      }
+
+      .ant-menu-item {
+        @apply text-slate-700;
+        /* hardcoded to 40px */
+        @apply h-9;
+
+        /* hardcoded to 40px */
+        @apply leading-9;
+        @apply rounded;
+        @apply my-0;
+        @apply mx-3;
+        @apply py-0;
+        @apply px-4;
+
+        &:hover {
+          @apply text-slate-700;
+          @apply bg-neutral-100;
+        }
+
+        &:active {
+          @apply rounded;
+        }
+
+        &.ant-menu-item-selected {
+          /* hardcoded to background color #1890ff in antd codebase */
+          background: unset;
+          @apply rounded;
+          @apply font-semibold;
+          @apply text-slate-700;
+
+          &:hover {
+            @apply bg-neutral-100;
+          }
+        }
+      }
+    }
+
+    &.ant-menu-submenu-disabled {
+      @apply text-neutral-300;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+@import 'antd/lib/style/default.css';
+@import 'antd/lib/image/style/index.css';
+
+.ant-image {
+  &.ant-image-error {
+    @apply bg-neutral-300;
+    @apply rounded;
+    @apply flex justify-center items-center;
+
+    .ant-image-img {
+      @apply h-1/4 w-1/4;
+    }
+  }
+
+  .ant-image-mask,
+  .ant-image-img {
+    @apply rounded;
+  }
+
+  .ant-image-mask {
+    .ant-image-mask-info {
+      @apply flex;
+      @apply items-center;
+    }
+  }
+}
+
+.ant-image-preview-root {
+  .ant-image-preview-img {
+    display: unset;
+    @apply align-middle;
+  }
+}

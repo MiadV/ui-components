@@ -1,0 +1,17 @@
+@import 'antd/lib/style/default.css';
+@import 'antd/lib/breadcrumb/style/index.css';
+
+@import '../Menu/style.css';
+@import '../Dropdown/style.css';
+
+.ant-breadcrumb {
+  span a {
+    @apply text-sm font-inter text-neutral-400;
+    @apply hover:text-neutral-400 hover:underline;
+  }
+
+  span:last-child a {
+    @apply text-slate-700;
+    @apply hover:text-slate-700;
+  }
+}

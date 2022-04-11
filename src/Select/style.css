@@ -1,0 +1,147 @@
+@import 'antd/lib/style/default.css';
+@import 'antd/lib/select/style/index.css';
+@import '../Empty/style.css';
+
+.ant-select {
+  @apply font-inter bg-white rounded-lg flex;
+
+  &-single:not(.ant-select-customize-input) {
+    .ant-select-selector {
+      @apply px-3 rounded-lg;
+
+      .ant-select-selection-item {
+        @apply m-auto;
+      }
+    }
+  }
+
+  &-single {
+    .ant-select-show-arrow {
+      .ant-select-selection-item {
+        @apply m-auto;
+      }
+    }
+  }
+
+  &:not(.ant-select-customize-input) {
+    .ant-select-selector {
+      @apply w-full !important;
+      @apply rounded-lg border-neutral-300;
+    }
+  }
+
+  &:not(.ant-select-customize-input):hover {
+    .ant-select-selector {
+      @apply border-neutral-300 border-solid;
+    }
+  }
+
+  &-focused:not(.ant-select-disabled).ant-select:not(.ant-select-customize-input) {
+    .ant-select-selector {
+      @apply border-neutral-300 shadow-none;
+    }
+  }
+
+  &.ant-select-open {
+    span.ant-select-arrow {
+      .rotate-caret {
+        @apply transform rotate-180 transition ease-linear;
+      }
+    }
+  }
+
+  &-arrow {
+    @apply mr-1;
+  }
+
+  &-multiple {
+    .ant-select-selector {
+      @apply px-2 py-1 h-auto rounded-lg;
+    }
+
+    .ant-select-selection-item {
+      @apply font-inter rounded;
+      @apply bg-neutral-100 text-neutral-700;
+    }
+
+    .ant-select-selection-placeholder {
+      @apply pl-1;
+    }
+
+    .ant-select-selection-item-remove > .anticon {
+      @apply align-middle leading-[0];
+    }
+  }
+
+  &-multiple.ant-select-disabled.ant-select:not(.ant-select-customize-input) {
+    .ant-select-selector {
+      @apply bg-neutral-100;
+    }
+  }
+
+  &-disabled.ant-select-multiple {
+    .ant-select-selection-item {
+      @apply bg-neutral-300 text-neutral-400 border-neutral-300;
+    }
+  }
+
+  &-item-option-selected:not(.ant-select-item-option-disabled) {
+    @apply font-inter font-semibold;
+    @apply mx-2 bg-transparent;
+
+    .ant-select-item-option-content{
+      @apply h-5 self-center;
+    }
+
+    .ant-select-item-option-state {
+      @apply h-5 self-center;
+    }
+
+    .anticon-check{
+      @apply h-4 w-4;
+      background-image:var(--ic-check-16-n700);
+      
+      svg{
+        @apply hidden;
+      }
+    }
+  }
+
+  &-item-option-active:not(.ant-select-item-option-disabled) {
+    @apply mx-2 bg-neutral-100 rounded;
+  }
+
+  &-item {
+    @apply mx-2 h-9;
+  }
+
+  &-arrow {
+    @apply w-4 h-4 text-neutral-500;
+  }
+}
+
+.ant-select-dropdown {
+  & .ui-checkable-option {
+    @apply flex items-center;
+
+    & .ui-item-text {
+      @apply flex-1;
+    }
+
+    & .ui-item-check {
+      @apply invisible;
+    }
+  }
+
+  & .ant-select-item-option-selected {
+    & .ui-item-check {
+      @apply ml-1 visible;
+    }
+  }
+}
+
+.ant-form-item-has-error {
+  .ant-select-selection-search-input {
+    @apply text-red-600;
+  }
+}

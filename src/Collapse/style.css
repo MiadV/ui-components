@@ -1,0 +1,32 @@
+@import 'antd/lib/style/default.css';
+@import 'antd/lib/collapse/style/index.css';
+
+.ant-collapse {
+  @apply font-inter;
+  @apply border-none;
+
+  .ant-collapse-item {
+    @apply border-slate-100;
+
+    &.ant-collapse-item-active {
+      @apply border-none;
+    }
+
+    .ant-collapse-content {
+      @apply border-none;
+      @apply bg-neutral-100;
+    }
+
+    .ant-collapse-header {
+      @apply bg-white;
+    }
+
+    .ant-collapse-content,
+    .ant-collapse-header {
+      @apply text-neutral-700;
+      @apply text-sm;
+      /* harcoded to 0 0 2px 2px in antd code base */
+      @apply rounded-none !important;
+    }
+  }
+}

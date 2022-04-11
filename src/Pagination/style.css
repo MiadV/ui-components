@@ -1,0 +1,127 @@
+@import 'antd/lib/style/default.css';
+@import 'antd/lib/pagination/style/index.css';
+@import '../Select/style.css';
+
+.ant-pagination {
+  &-item {
+    @apply font-inter text-neutral-500 text-base rounded-full bg-transparent border-none;
+    @apply h-6 w-6 min-w-0;
+    @apply hover:bg-neutral-300;
+
+    a {
+      @apply text-neutral-500;
+      @apply hover:text-neutral-700;
+    }
+
+    &-active {
+      @apply bg-neutral-700;
+
+      a {
+        @apply text-white;
+      }
+    }
+  }
+
+  &-next {
+    @apply text-neutral-500 ml-2 inline-flex;
+
+    svg {
+      @apply self-center;
+    }
+  }
+
+  &-item {
+    @apply inline-table;
+  }
+
+  &-prev {
+    @apply text-neutral-500 mr-2 inline-flex;
+
+    svg {
+      @apply self-center;
+    }
+  }
+
+  &-disabled {
+    @apply text-neutral-300;
+  }
+
+  .ant-pagination-item-link-icon {
+    @apply text-neutral-700 !important;
+  }
+
+  &-jump-next,
+  &-jump-prev {
+    @apply min-w-0 w-6 h-6;
+
+    .ant-pagination-item-link {
+      @apply h-full;
+    }
+
+    .ant-pagination-item-ellipsis {
+      @apply h-6;
+    }
+  }
+
+  .anticon-double-left,
+  .anticon-double-right {
+    @apply text-neutral-700 flex justify-center pt-1.5;
+  }
+
+  &-next,
+  &-prev {
+    @apply w-6 h-6 min-w-0;
+
+    .ant-pagination-item-link {
+      @apply bg-transparent border-none rounded-full flex justify-center;
+      @apply hover:text-neutral-700;
+
+      .anticon {
+        @apply self-center w-4 h-4 text-transparent;
+      }
+    }
+  }
+
+  &-simple-pager {
+    @apply font-inter text-base;
+
+    .ant-pagination-slash {
+      @apply ml-4 mr-6;
+    }
+    input {
+      @apply w-10 border-neutral-300 rounded !important;
+      @apply focus:shadow-none !important;
+    }
+
+    input::before {
+      content: 'Page';
+    }
+  }
+
+  &-simple-pager::before {
+    content: 'Page';
+    @apply pr-2;
+  }
+
+  &-options {
+    @apply align-baseline;
+  }
+  &-options-quick-jumper {
+    @apply font-inter text-base;
+
+    input {
+      @apply w-10 h-6 rounded border-neutral-300;
+      @apply focus:border-neutral-300 focus:shadow-none;
+      @apply hover:border-neutral-300 hover:shadow-none;
+    }
+  }
+
+  &-options-quick-jumper {
+    @apply text-[0];
+  }
+
+  &-options-quick-jumper::before {
+    content: 'Go to page';
+    @apply text-neutral-700 text-base;
+  }
+}

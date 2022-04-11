@@ -1,0 +1,50 @@
+@import 'antd/lib/timeline/style/index.css';
+
+.ant-timeline {
+  .ant-timeline-item {
+    @apply pb-2.5;
+
+    .ant-timeline-item-head {
+      /* border color is hardcoded in ant design source code, in TimelineItem.js */
+      @apply border-white !important;
+
+      &.ant-timeline-item-head-green {
+        @apply bg-green-500;
+      }
+
+      &.ant-timeline-item-head-red {
+        @apply bg-red-600;
+      }
+
+      &.ant-timeline-item-head-yellow {
+        @apply bg-yellow-400;
+      }
+
+      &.ant-timeline-item-head-grey {
+        @apply bg-neutral-300;
+      }
+    }
+
+    &:last-child:not(:only-child) {
+      .ant-timeline-item-tail {
+        @apply hidden;
+      }
+    }
+
+    .ant-timeline-item-tail {
+      @apply border-l-neutral-300;
+      /* hardcoded as 2px for border-left in ant design source code */
+      @apply border-l;
+      /* readjust due to reduction of border left width */
+      @apply left-[4.6px];
+    }
+
+    .ant-timeline-item-content {
+      @apply text-xs;
+      @apply text-neutral-700;
+      @apply font-inter;
+      /* hardcoded as -7.001px in ant design source code */
+      @apply -top-[3px];
+    }
+  }
+}
