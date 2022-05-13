@@ -2,7 +2,7 @@ import React from 'react'
 import { Story, ComponentMeta } from '@storybook/react'
 import { Form, FormItemProps } from 'antd'
 import { differenceInDays } from 'date-fns'
-import { default as DatePicker } from '../index'
+import { DatePicker } from '../index'
 
 import '../../assets/style/form-item.css'
 
@@ -38,7 +38,6 @@ Basic.args = {
   datePicker: {
     label: 'DatePicker',
     showToday: false,
-    format: 'DD/MM/YYYY'
   },
   formItem: {
     label: 'Date'
@@ -49,9 +48,8 @@ export const Error = Template.bind({})
 
 Error.args = {
   datePicker: {
-    label: 'RangePicker',
+    label: 'DatePicker',
     showToday: false,
-    format: 'DD/MM/YYYY'
   },
   formItem: {
     label: 'Date',

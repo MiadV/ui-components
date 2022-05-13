@@ -25,7 +25,7 @@
     @apply text-neutral-300;
   }
 
-  .ant-input-clear-icon > svg {
+  .ant-input-clear-icon > span > svg {
     @apply hidden;
   }
 
@@ -136,4 +136,8 @@
   .ant-input-affix-wrapper .ant-input-clear-icon {
     background-image: var(--ic-x-16);
   }
+}
+
+textarea.ant-input {
+  @apply rounded-lg border-slate-100;
 }

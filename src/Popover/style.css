@@ -13,6 +13,10 @@
 
     &-inner-content{
         @apply p-2;
+
+        button{
+          @apply mr-0;
+        }
     }
 
   &-inner-content > div > p:first-child {
@@ -27,4 +31,5 @@
         @apply font-semibold min-w-0;
         @apply flex justify-center items-center;
     }
+
 }

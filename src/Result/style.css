@@ -1,0 +1,48 @@
+@import 'antd/lib/style/default.css';
+@import 'antd/lib/result/style/index.css';
+
+.ant-result {
+  @apply font-inter m-auto px-0 flex flex-col items-center;
+
+  .ant-result-icon {
+    @apply flex justify-center mb-0;
+  }
+
+  .ant-result-title,
+  .ant-result-subtitle {
+    @apply max-w-xs;
+  }
+
+  .ant-result-title {
+    @apply text-neutral-500 font-bold text-base;
+  }
+
+  .ant-result-subtitle {
+    @apply text-neutral-400 text-sm;
+  }
+
+  .ant-result-content {
+    @apply bg-neutral-100 rounded-lg p-6 w-[448px];
+  }
+
+  .ant-result-children {
+    &-title {
+      @apply text-neutral-700 font-semibold text-sm mb-[10px];
+    }
+
+    &-content {
+      @apply flex justify-between items-center;
+
+      &:not(:last-child) {
+        @apply mb-2;
+      }
+    }
+
+    &-icon-and-text {
+      @apply flex items-center text-neutral-700 text-sm;
+      > svg {
+        @apply mr-[6px];
+      }
+    }
+  }
+}

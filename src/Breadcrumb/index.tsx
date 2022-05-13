@@ -1,9 +1,9 @@
 import * as React from 'react'
 import {
-  default as AntBreadcrumb,
+  Breadcrumb as AntBreadcrumb,
   BreadcrumbProps as AntBreadcrumbProps,
   BreadcrumbItemProps as AntBreadcrumbItemProps
-} from 'antd/lib/breadcrumb'
+} from 'antd'
 
 import './style.css'
 import { default as BreadcrumbItemType } from 'antd/lib/breadcrumb/BreadcrumbItem';

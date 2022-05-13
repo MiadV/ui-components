@@ -1,9 +1,9 @@
 import * as React from 'react';
 import {
-  default as AntModal,
+  Modal as AntModal,
   ModalFuncProps as AntModalFuncProps,
   ModalProps as AntModalProps
-} from 'antd/lib/modal';
+} from 'antd';
 import classNames from 'classnames';
 
 import { X, Info, WarningCircle, XCircle } from 'phosphor-react';

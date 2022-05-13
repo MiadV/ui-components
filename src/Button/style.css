@@ -1,3 +1,6 @@
+@import 'antd/lib/style/default.css';
+@import 'antd/lib/button/style/index.css';
+
 .ant-btn {
   @apply rounded-lg font-inter h-auto;
   @apply inline-flex items-center justify-center border-none;

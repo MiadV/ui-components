@@ -1,0 +1,58 @@
+@import 'antd/lib/style/default.css';
+@import 'antd/lib/tree-select/style/index.css';
+@import '../Select/style.css';
+@import '../Empty/style.css';
+
+.ant-tree-select-dropdown {
+  @apply shadow-md;
+
+  .ant-select-tree-list-holder-inner {
+    .ant-select-tree-treenode {
+      @apply text-neutral-700 flex items-center p-0 mx-2 h-9;
+
+      &-disabled {
+        @apply text-neutral-300;
+      }
+
+      span.ant-select-tree-title {
+        @apply pointer-events-none;
+      }
+
+      span.ant-select-tree-switcher {
+        &_close {
+          .rotate-caret {
+            @apply transition -rotate-90;
+          }
+        }
+      }
+
+      span.ant-select-tree-node-content-wrapper {
+        @apply p-0;
+      }
+
+      &:not(&-disabled):hover {
+        @apply bg-neutral-100 rounded;
+      }
+
+      .ant-select-tree-switcher {
+        @apply flex items-center justify-center;
+      }
+
+      &.ant-select-tree-treenode-selected {
+        @apply font-semibold;
+        @apply relative;
+
+        /* grey tick when selected */
+        &::after {
+          @apply text-neutral-700 absolute h-4;
+          right: 14.5px;
+          content: var(--ic-check-16-neutral-700);
+        }
+        .ant-select-tree-node-selected {
+          /* allow background to match hover state background */
+          background: unset;
+        }
+      }
+    }
+  }
+}

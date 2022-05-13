@@ -1,0 +1,120 @@
+@import 'antd/lib/style/default.css';
+@import 'antd/lib/time-picker/style/index.css';
+@import '../DatePicker/style.css';
+
+.ant-picker{
+    &-time-panel{
+
+        @apply font-inter text-sm font-normal;
+        @apply pt-0 !important;
+
+        &-cell{
+            @apply w-8 h-6;
+        }
+
+        &-cell-selected{
+            .ant-picker-time-panel-cell-inner{
+                @apply bg-slate-700 rounded-lg text-white !important;
+            }
+        }
+
+        &-column{
+            @apply w-8 mr-1.5;
+
+            li{
+                @apply mb-1;
+            }
+        }
+
+        &-column:not(:first-child) {
+            @apply border-none;
+        }
+
+        &-cell-inner{
+            @apply text-center ;
+            @apply pl-0 h-6 leading-6 text-neutral-700 !important;
+            @apply hover:bg-neutral-100 hover:rounded-lg !important;
+        }
+    }
+
+    &-content{
+        @apply p-4;
+
+        ::-webkit-scrollbar {
+            @apply w-0 bg-transparent;
+        }
+    }
+
+    &-ranges{
+        @apply p-4 pt-3 leading-6;
+    }
+
+    /* If Ok Button is the only child */
+    &-ranges > &-ok:first-child{
+        @apply ml-0 w-full text-center;
+    }
+
+    &-range-separator {
+        @apply px-4 text-slate-300;
+    }
+
+    &-range > .ant-picker-active-bar {
+        @apply bg-neutral-700 h-[1px];
+    }
+
+    &-now a{
+        @apply font-inter text-primary text-xs font-semibold align-middle;
+        @apply px-3 py-1;
+        @apply hover:text-primary hover:opacity-70;
+    }
+
+    &-ok{
+        @apply leading-4 ml-0;
+    }
+    &-ok button{
+        @apply mr-0 leading-3;
+    }
+    
+    &-ok button > span{
+        @apply text-[0px] contents;
+    }
+
+    &-ok .ant-btn-primary[disabled] span{
+        @apply text-neutral-300;
+    }
+    
+
+    /* Change "Ok" text to "Done" */
+    &-ok button > span:after{
+        content:"Done";
+        @apply text-xs leading-4;
+    }
+
+    /* Ratate the Caret Down Icon when Picker is Focused */
+    &.ui-open{
+        .ant-picker-suffix{
+            @apply transform rotate-180 transition ease-linear;
+        }
+    }
+
+    .ant-picker-suffix{
+        @apply transition ease-linear;
+    }
+
+}
+
+.ant-picker.-has-no-done{
+    .ant-picker-now{
+        @apply w-full text-center;
+    }
+
+    .ant-picker-ok{
+        @apply hidden;
+    }
+}
+
+.ant-picker.ant-picker-status-error{
+    .ant-picker-range-separator {
+        @apply text-red-600;
+    }
+}

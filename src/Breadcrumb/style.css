@@ -5,12 +5,12 @@
 @import '../Dropdown/style.css';
 
 .ant-breadcrumb {
-  span a {
+  li a {
     @apply text-sm font-inter text-neutral-400;
     @apply hover:text-neutral-400 hover:underline;
   }
 
-  span:last-child a {
+  li:last-child a {
     @apply text-slate-700;
     @apply hover:text-slate-700;
   }

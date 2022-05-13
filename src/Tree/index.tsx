@@ -1,14 +1,16 @@
-import * as React from 'react';
-import { Tree as AntTree, TreeProps as AntTreeProps } from 'antd';
+import * as React from 'react'
+import { Tree as AntTree, TreeProps as AntTreeProps } from 'antd'
 
-import './style.css';
+import './style.css'
 
-export type TreeProps = AntTreeProps;
+export type TreeProps = AntTreeProps
 
 const Tree: React.FC<TreeProps> = props => {
-  return <AntTree {...props} />;
-};
+  return <AntTree {...props} />
+}
 
-Tree.defaultProps = {};
+Tree.defaultProps = {
+  treeData: []
+}
 
-export default Tree;
+export default Tree

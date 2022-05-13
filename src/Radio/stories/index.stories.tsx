@@ -30,7 +30,7 @@ export const Disabled = Template.bind({})
 Disabled.args = {
   label: 'Radio',
   children: 'Radio',
-  disabled: 'true'
+  disabled: true
 }
 
 export const DisabledChecked = Template.bind({})
@@ -39,5 +39,5 @@ DisabledChecked.args = {
   label: 'Radio',
   children: 'Radio',
   defaultChecked: 'true',
-  disabled: 'true'
+  disabled: true
 }

@@ -16,8 +16,8 @@ export type MetaProps = AntCardMetaProps & {
 export const { Meta } = AntCard
 
 const Card: React.FC<CardProps> = props => {
-  const { hasButton,hasMetaExtra } = props
-  return <AntCard {...props}  className={ [hasButton ? "with-button" : "", hasMetaExtra ? "with-meta-extra" : ""].join(" ")}/>
+  const { hasButton,hasMetaExtra, ...restProps } = props
+  return <AntCard {...restProps}  className={ [hasButton ? "with-button" : "", hasMetaExtra ? "with-meta-extra" : ""].join(" ")}/>
 }
 
 export default Card

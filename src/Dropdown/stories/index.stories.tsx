@@ -2,8 +2,9 @@ import React from 'react'
 import { useState } from '@storybook/addons'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
+import { ItemType } from 'antd/lib/menu/hooks/useItems'
 import { UserCircle } from 'phosphor-react'
-import { default as Menu, MenuItem, SubMenu, MenuItemGroup, MenuDivider } from '../../Menu'
+import { default as Menu } from '../../Menu'
 import { default as Dropdown, DropdownProps } from '../index'
 
 export default {
@@ -21,44 +22,106 @@ const Template: ComponentStory<typeof Dropdown> = (args: DropdownProps) => {
   )
 }
 
-const menu = (
-  <Menu style={{ width: 320 }}>
-    <MenuItem key="1">Dropdown 1</MenuItem>
-    <MenuItem key="2">Dropdown 2</MenuItem>
-    <MenuItem key="3">Dropdown 4</MenuItem>
-    <MenuItem key="4">Dropdown 3</MenuItem>
-    <MenuItem key="5">Dropdown 5</MenuItem>
-    <MenuItem key="6">Dropdown 6</MenuItem>
-  </Menu>
-)
+const menuItems: ItemType[] = [
+  {
+    key: '1',
+    label: 'Dropdown 1'
+  },
+  {
+    key: '2',
+    label: 'Dropdown 2'
+  },
+  {
+    key: '3',
+    label: 'Dropdown 3'
+  },
+  {
+    key: '4',
+    label: 'Dropdown 4'
+  },
+  {
+    key: '5',
+    label: 'Dropdown 5'
+  },
+  {
+    key: '6',
+    label: 'Dropdown 6'
+  }
+]
 
-const menuWithDivider = (
-  <Menu style={{ width: 320 }}>
-    <MenuItem key="1">Dropdown 1</MenuItem>
-    <MenuItem key="2">Dropdown 2</MenuItem>
-    <MenuItem key="3">Dropdown 4</MenuItem>
-    <MenuItem key="4">Dropdown 3</MenuItem>
-    <MenuDivider />
-    <MenuItem key="5">Dropdown 5</MenuItem>
-    <MenuItem key="6">Dropdown 6</MenuItem>
-  </Menu>
-)
+const menuWithDividerItems: ItemType[] = [
+  {
+    key: '1',
+    label: 'Dropdown 1'
+  },
+  {
+    key: '2',
+    label: 'Dropdown 2'
+  },
+  {
+    key: '3',
+    label: 'Dropdown 3'
+  },
+  {
+    key: '4',
+    label: 'Dropdown 4'
+  },
+  { type: 'divider' },
+  {
+    key: '5',
+    label: 'Dropdown 5'
+  },
+  {
+    key: '6',
+    label: 'Dropdown 6'
+  }
+]
 
-const menuWithSubmenu = (
-  <Menu style={{ width: 320 }}>
-    <MenuItemGroup title="Group title">
-      <MenuItem key="1">Dropdown 1</MenuItem>
-      <MenuItem key="2">Dropdown 2</MenuItem>
-    </MenuItemGroup>
-    <SubMenu key="3" title="Sub-menu">
-      <MenuItem key="sub1">Sub-menu 1</MenuItem>
-      <MenuItem key="sub2">Sub-menu 2</MenuItem>
-    </SubMenu>
-    <MenuDivider />
-    <MenuItemGroup title="Title 2"></MenuItemGroup>
-    <MenuItemGroup title="Title 3"></MenuItemGroup>
-  </Menu>
-)
+const menuWithSubmenuItems: ItemType[] = [
+  {
+    type: 'group',
+    label: 'Group Title',
+    children: [
+      {
+        key: '1',
+        label: 'Dropdown 1'
+      },
+      {
+        key: '2',
+        label: 'Dropdown 2'
+      }
+    ]
+  },
+  {
+    key: '3',
+    label: 'Sub-menu',
+    children: [
+      {
+        key: 'sub1',
+        label: 'Sub-menu 1'
+      },
+      {
+        key: 'sub2',
+        label: 'Sub-menu 2'
+      }
+    ]
+  },
+  {
+    type: 'divider'
+  },
+  {
+    type: 'group',
+    label: 'Title 2'
+  },
+  {
+    type: 'group',
+    label: 'Title 3'
+  }
+]
+
+const menu = <Menu style={{ width: 320 }} items={menuItems} />
+const menuWithDivider = <Menu style={{ width: 320 }} items={menuWithDividerItems} />
+const menuWithSubmenu = <Menu style={{ width: 320 }} items={menuWithSubmenuItems} />
 
 export const Basic = Template.bind({})
 
@@ -91,21 +154,25 @@ export const MenuWithState = () => {
     setCurrent(e.key)
   }
 
-  const menu = (
-    <Menu mode="vertical" onClick={handleClick} selectedKeys={[current]}>
-      <MenuItem key="1" icon={<UserCircle size={16} />}>
-        Dropdown 1
-      </MenuItem>
-      <SubMenu key="2" title="Dropdown 2">
-        <MenuItem key="5">Option 5</MenuItem>
-        <MenuItem key="6">Option 6</MenuItem>
-      </SubMenu>
-      <MenuItem key="7">Dropdown 3</MenuItem>
-      <MenuItem key="8" disabled>
-        Dropdown 4
-      </MenuItem>
-    </Menu>
-  )
+  const menuWithStateItems: ItemType[] = [
+    {
+      key: '1',
+      icon: <UserCircle size={16} />,
+      label: 'Dropdown 1'
+    },
+    {
+      key: '2',
+      label: 'Dropdown 2',
+      children: [
+        { key: '3', label: 'Option 3' },
+        { key: '4', label: 'Option 4' }
+      ]
+    },
+    { key: '5', label: 'Dropdown 3' },
+    { key: '6', label: 'Dropdown 4', disabled: true }
+  ]
+
+  const menu = <Menu mode="vertical" onClick={handleClick} selectedKeys={[current]} items={menuWithStateItems} />
 
   return (
     <Dropdown overlay={menu} trigger={['click']}>

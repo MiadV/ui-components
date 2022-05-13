@@ -49,6 +49,12 @@
       }
     }
   }
+  
+  span.ant-select-arrow {
+    .rotate-caret {
+      @apply transition ease-linear;
+    }
+  }
 
   &-arrow {
     @apply mr-1;

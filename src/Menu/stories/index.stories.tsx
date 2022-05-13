@@ -1,7 +1,11 @@
 import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { Switch } from 'antd'
 import { Bell, CaretDown, HouseLine, MagnifyingGlass } from 'phosphor-react'
-import { default as Menu, MenuItemGroup, MenuItem, MenuProps, SubMenu, isIconFill } from '../index'
+
+import { default as Menu, MenuProps, isIconFill } from '../index'
+
+import 'antd/lib/switch/style/index.css'
 
 export default {
   title: 'Menu',
@@ -16,9 +20,8 @@ const Template: ComponentStory<typeof Menu> = (args: MenuProps, context) => {
       style={{
         width: args.inlineCollapsed ? 64 : args.mode === 'inline' && 256
       }}
-    >
-      {args.children || context.children}
-    </Menu>
+      items={args.items || context.items}
+    />
   )
 }
 
@@ -27,96 +30,176 @@ export const TopNavigation = Template.bind({})
 TopNavigation.args = {
   label: 'Top Navigation',
   mode: 'horizontal',
-  children: (
+  items: [
+    {
+      label: 'Navigation One',
+      key: 'one'
+    },
+    {
+      label: 'Navigation Two',
+      key: 'two'
+    },
+    {
+      label: 'Navigation Three',
+      key: 'three',
+      disabled: true
+    },
+    {
+      label: 'Navigation Four',
+      key: 'four',
+      icon: <CaretDown size={16} weight={'light'} />,
+      children: [
+        {
+          type: 'group',
+          label: 'Item 1',
+          children: [
+            { label: 'Option 1', key: 'setting:1' },
+            { label: 'Option 2', key: 'setting:2' }
+          ]
+        },
+        {
+          type: 'group',
+          label: 'Item 2',
+          children: [
+            { label: 'Option 3', key: 'setting:3' },
+            { label: 'Option 4', key: 'setting:4' }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+export const InlineMenuCollapsed = () => {
+  const [selectedKey, setSelectedKey] = React.useState([])
+  const [inlineCollapsed, setInlineCollapsed] = React.useState(true)
+
+  const items = [
+    {
+      label: 'Navigation One',
+      key: 'one',
+      icon: <HouseLine weight={isIconFill(selectedKey, 'one')} size={16} />,
+      children: [
+        {
+          type: 'group',
+          label: 'Sub-menu 1',
+          children: [
+            {
+              label: 'Option 1',
+              key: 'setting:1'
+            },
+            {
+              label: 'Option 2',
+              key: 'setting:2'
+            }
+          ]
+        },
+        {
+          type: 'group',
+          label: 'Sub-menu 2',
+          children: [
+            {
+              label: 'Option 1',
+              key: 'setting:3'
+            },
+            {
+              label: 'Option 2',
+              key: 'setting:4'
+            }
+          ]
+        }
+      ]
+    },
+    {
+      label: 'Navigation Two',
+      key: 'two',
+      icon: <MagnifyingGlass weight={isIconFill(selectedKey, 'two')} size={16} />,
+      children: [
+        {
+          type: 'group',
+          label: 'Sub-menu 1',
+          children: [
+            {
+              label: 'Option 1',
+              key: 'setting:5'
+            },
+            {
+              label: 'Option 2',
+              key: 'setting:6'
+            }
+          ]
+        },
+        {
+          type: 'group',
+          label: 'Sub-menu 2',
+          children: [
+            {
+              label: 'Option 1',
+              key: 'setting:7'
+            },
+            {
+              label: 'Option 2',
+              key: 'setting:8'
+            }
+          ]
+        }
+      ]
+    },
+    {
+      label: 'Navigation Three',
+      key: 'three',
+      icon: <Bell weight={isIconFill(selectedKey, 'three')} size={16} />,
+      children: [
+        {
+          type: 'group',
+          label: 'Sub-menu 1',
+          children: [
+            {
+              label: 'Option 1',
+              key: 'setting:9'
+            },
+            {
+              label: 'Option 2',
+              key: 'setting:10'
+            }
+          ]
+        },
+        {
+          type: 'group',
+          label: 'Sub-menu 2',
+          children: [
+            {
+              label: 'Option 1',
+              key: 'setting:11'
+            },
+            {
+              label: 'Option 2',
+              key: 'setting:12'
+            }
+          ]
+        }
+      ]
+    }
+  ]
+
+  return (
     <>
-      <MenuItem key={'one'}>Navigation One</MenuItem>
-      <MenuItem key={'two'}>Navigation Two</MenuItem>
-      <MenuItem key={'three'} disabled={true}>
-        Navigation Three
-      </MenuItem>
-      <SubMenu icon={<CaretDown size={16} weight={'light'} />} key={'four'} title="Navigation One">
-        <MenuItemGroup title="Item 1">
-          <MenuItem key="setting:1">Option 1</MenuItem>
-          <MenuItem key="setting:2">Option 2</MenuItem>
-        </MenuItemGroup>
-        <MenuItemGroup title="Item 2">
-          <MenuItem key="setting:3">Option 3</MenuItem>
-          <MenuItem key="setting:4">Option 4</MenuItem>
-        </MenuItemGroup>
-      </SubMenu>
+      <Menu
+        mode="inline"
+        inlineCollapsed={inlineCollapsed}
+        items={items}
+        onSelect={item => setSelectedKey(item.keyPath)}
+        style={{
+          width: inlineCollapsed ? 64 : 256,
+          marginBottom: '20px'
+        }}
+      />
+      <Switch
+        defaultChecked={inlineCollapsed}
+        onChange={() => setInlineCollapsed(!inlineCollapsed)}
+        checkedChildren={'Collapsed'}
+        unCheckedChildren={'Expanded'}
+      />
     </>
   )
 }
-
-export const InlineMenu = Template.bind({})
-
-InlineMenu.argTypes = {
-  inlineCollapsed: {
-    options: [true, false],
-    control: { type: 'radio' }
-  },
-  mode: {
-    table: {
-      disable: true
-    }
-  }
-}
-
-InlineMenu.args = {
-  label: 'Inline Menu',
-  mode: 'inline',
-  inlineCollapsed: true
-}
-
-InlineMenu.decorators = [
-  Story => {
-    const [selectedKey, setSelectedKey] = React.useState([])
-
-    return (
-      <Story mode="inline" onSelect={menuData => setSelectedKey(menuData.keyPath)}>
-        <SubMenu
-          key={'one'}
-          icon={<HouseLine weight={isIconFill(selectedKey, 'one')} size={16} />}
-          title="Navigation One"
-        >
-          <MenuItemGroup title="Sub-menu 1">
-            <MenuItem key="setting:1">Option 1</MenuItem>
-            <MenuItem key="setting:2">Option 2</MenuItem>
-          </MenuItemGroup>
-          <MenuItemGroup title="Item 2">
-            <MenuItem key="setting:3">Option 3</MenuItem>
-            <MenuItem key="setting:4">Option 4</MenuItem>
-          </MenuItemGroup>
-        </SubMenu>
-        <SubMenu
-          key={'two'}
-          icon={<MagnifyingGlass weight={isIconFill(selectedKey, 'two')} size={16} />}
-          title="Navigation Two"
-        >
-          <MenuItemGroup title="Item 1">
-            <MenuItem key="setting:5">Option 1</MenuItem>
-            <MenuItem key="setting:6">Option 2</MenuItem>
-          </MenuItemGroup>
-          <MenuItemGroup title="Item 2">
-            <MenuItem key="setting:7">Option 3</MenuItem>
-            <MenuItem key="setting:8">Option 4</MenuItem>
-          </MenuItemGroup>
-        </SubMenu>
-        <SubMenu
-          key={'three'}
-          icon={<Bell weight={isIconFill(selectedKey, 'three')} size={16} />}
-          title="Navigation Three"
-        >
-          <MenuItemGroup title="Item 1">
-            <MenuItem key="setting:9">Option 1</MenuItem>
-            <MenuItem key="setting:10">Option 2</MenuItem>
-          </MenuItemGroup>
-          <MenuItemGroup title="Item 2">
-            <MenuItem key="setting:11">Option 3</MenuItem>
-            <MenuItem key="setting:12">Option 4</MenuItem>
-          </MenuItemGroup>
-        </SubMenu>
-      </Story>
-    )
-  }
-]

@@ -1,0 +1,16 @@
+@import 'antd/lib/style/default.css';
+@import 'antd/lib/back-top/style/index.css';
+
+.ant-back-top{
+    button{
+
+        @apply bg-slate-700;
+        @apply outline-transparent !important;
+        @apply hover:bg-slate-700 hover:opacity-75;
+
+        svg{
+            @apply text-white;
+            @apply hover:text-white;
+        }
+    }
+}

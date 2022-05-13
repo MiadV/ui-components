@@ -22,7 +22,6 @@ const Template: Story<Args> = (args: Args) => {
       <Form.Item style={{ width: '320px' }} {...args.formItem}>
         <QuarterPicker
           style={{ width: '320px' }}
-          {...args.datePicker}
           disabledDate={current => {
             return current && differenceInDays(current, new Date()) < 0
           }}
@@ -38,7 +37,6 @@ export const Basic = Template.bind({})
 Basic.args = {
   datePicker: {
     label: 'DatePicker',
-    picker: 'quarter'
   },
   formItem: {
     label: 'Date'

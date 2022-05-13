@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import { ComponentMeta, Story } from '@storybook/react'
-import { Col, Row } from 'antd'
+import { ComponentMeta } from '@storybook/react'
+import { Col, Row, Switch } from 'antd'
 import { Handshake, Person } from 'phosphor-react'
 
 import WithAntIconSpan from '../../HOCs'
-import { default as Menu, MenuItem, SubMenu, isIconFill } from '../../Menu'
+import { default as Menu, isIconFill } from '../../Menu'
 import Select, { CheckeableItem, Option } from '../../Select'
 import Tag from '../../Tag'
 
@@ -12,7 +12,6 @@ import {
   Content,
   default as Layout,
   Header,
-  LayoutProps,
   Sider,
   SiderHeader,
   LogoutButton,
@@ -24,75 +23,64 @@ import {
 
 import 'antd/lib/typography/style/index.css'
 
-type Args = LayoutProps & {
-  label: string
-  type?: string
-}
-
 export default {
   title: 'Layout',
-  component: Layout,
-  argTypes: {
-    type: {
-      options: ['staging', 'production'],
-      control: { type: 'radio' }
-    }
-  }
+  component: Layout
 } as ComponentMeta<typeof Layout>
 
-const subMenuItems = [
-  {
-    key: 'sub1',
-    Icon: Handshake,
-    title: 'Merchant Connect',
-    subItems: [
-      {
-        key: '1',
-        title: 'My Merchants'
-      },
-      {
-        key: '2',
-        title: 'My Submissions'
-      },
-      {
-        key: '3',
-        title: 'My Drafts'
-      },
-      {
-        key: '4',
-        title: 'My Attentions'
-      }
-    ]
-  },
-  {
-    key: 'sub2',
-    Icon: Person,
-    title: 'User',
-    subItems: [
-      {
-        key: '5',
-        title: 'Tom'
-      },
-      {
-        key: '6',
-        title: 'Bill'
-      },
-      {
-        key: '7',
-        title: 'Alex'
-      }
-    ]
-  }
-]
-
-const rootSubmenuKeys = subMenuItems.map(item => item.key)
-
-const Template: Story<Args> = (args: Args) => {
+export const Default = () => {
   const [collapsed, setCollapsed] = useState(true)
   const [openKeys, setOpenKeys] = React.useState<string[]>([])
   const [selectedKeyPath, setSelectedKeyPath] = React.useState<string[]>(['sub1', '1'])
-
   const [selectedCountry, setSelectedCountry] = useState('MY')
+  const [isStaging, setIsStaging] = useState(true)
+
+  const subMenuItems = [
+    {
+      key: 'sub1',
+      icon: <WithAntIconSpan icon={<Handshake weight={isIconFill(selectedKeyPath, 'sub1')} />} />,
+      label: 'Merchant Connect',
+      children: [
+        {
+          key: '1',
+          label: 'My Merchants'
+        },
+        {
+          key: '2',
+          label: 'My Submissions'
+        },
+        {
+          key: '3',
+          label: 'My Drafts'
+        },
+        {
+          key: '4',
+          label: 'My Attentions'
+        }
+      ]
+    },
+    {
+      key: 'sub2',
+      icon: <WithAntIconSpan icon={<Person weight={isIconFill(selectedKeyPath, 'sub2')} />} />,
+      label: 'User',
+      children: [
+        {
+          key: '5',
+          label: 'Tom'
+        },
+        {
+          key: '6',
+          label: 'Bill'
+        },
+        {
+          key: '7',
+          label: 'Alex'
+        }
+      ]
+    }
+  ]
+
+  const rootSubmenuKeys = subMenuItems.map(item => item.key)
 
   const handleMenuOpen = keys => {
     const latestOpenKey = keys.find(key => openKeys.indexOf(key) === -1)
@@ -101,10 +89,16 @@ const Template: Story<Args> = (args: Args) => {
   }
 
   const handleLogoutClick = () => confirm('Are you sure? :(')
-  const isStaging = args.type && args.type === 'staging'
 
   return (
-    <Layout {...args} style={{ height: 600 }}>
+    <Layout style={{ height: 600, position: 'relative' }}>
+      <Switch
+        style={{ position: 'fixed', bottom: 10, right: 10 }}
+        checked={isStaging}
+        checkedChildren={'Staging'}
+        unCheckedChildren={'Production'}
+        onChange={() => setIsStaging(!isStaging)}
+      />
       <Sider trigger={null} collapsible collapsed={collapsed}>
         <SiderHeader text={'Katelyn Soo'} collapsed={collapsed} setCollapsed={setCollapsed} />
 
@@ -115,19 +109,8 @@ const Template: Story<Args> = (args: Args) => {
           openKeys={openKeys}
           onOpenChange={handleMenuOpen}
           onSelect={selectionInfo => setSelectedKeyPath(selectionInfo.keyPath)}
-        >
-          {subMenuItems.map(item => (
-            <SubMenu
-              key={item.key}
-              icon={<WithAntIconSpan icon={<item.Icon weight={isIconFill(selectedKeyPath, item.key)} />} />}
-              title="Merchant Connect"
-            >
-              {item.subItems.map(sub => (
-                <MenuItem key={sub.key}>{sub.title}</MenuItem>
-              ))}
-            </SubMenu>
-          ))}
-        </Menu>
+          items={subMenuItems}
+        />
 
         <BottomPane>
           <LogoutButton onClick={handleLogoutClick} />
@@ -179,11 +162,4 @@ const Template: Story<Args> = (args: Args) => {
       </Layout>
     </Layout>
   )
-}
-
-export const Default = Template.bind({})
-
-Default.args = {
-  type: 'staging',
-  label: 'Layout'
 }

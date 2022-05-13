@@ -1,0 +1,35 @@
+@import 'antd/lib/mentions/style/index.css';
+
+@import '../Empty/style.css';
+@import '../Spin/style.css';
+
+.ant-mentions{
+    @apply font-inter rounded-lg text-sm outline-none;
+    @apply hover:border-neutral-300 hover:outline-none hover:shadow-none;
+    @apply focus:border-neutral-300;
+
+    &-focused{
+        @apply border-neutral-300 shadow-none;
+    }
+
+    textarea{
+        @apply py-2.5;
+    }
+
+    &-dropdown{
+        @apply rounded-lg mt-5 p-2;
+    }
+
+    &-dropdown-menu{
+        @apply rounded-lg;
+    }
+
+    &-dropdown-menu-item{
+        @apply font-inter text-sm font-normal text-neutral-700 px-2 py-2 rounded;
+    }
+
+    &-dropdown-menu-item:first-child, &-dropdown-menu-item:last-child {
+        @apply rounded;
+    }
+    
+}
