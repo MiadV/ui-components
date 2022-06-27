@@ -2,6 +2,7 @@
 @import 'antd/lib/button/style/index.css';
 
 .ant-btn {
+  
   @apply rounded-lg font-inter h-auto;
   @apply inline-flex items-center justify-center border-none;
   @apply focus:border-transparent focus:outline-none;
@@ -70,6 +71,10 @@
 
     &:active {
       @apply text-primary;
+    }
+
+    &.ant-btn-lg{
+      min-height:40px;
     }
   }
 
