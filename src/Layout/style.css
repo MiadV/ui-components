@@ -133,7 +133,7 @@
   @apply relative;
 
   & .ant-layout-sider-light {
-    @apply absolute left-0 top-0 bottom-0 z-[1];
+    @apply absolute left-0 top-0 bottom-0 z-[3];
 
     & + .ant-layout {
       @apply ml-20;
