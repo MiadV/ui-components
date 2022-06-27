@@ -5,7 +5,7 @@
 .ant-dropdown{
 
     &-menu{
-        @apply rounded-lg py-2;
+        @apply rounded-lg;
 
         &-item{
             @apply font-inter text-sm text-neutral-700;

@@ -60,7 +60,7 @@ export const ModalFunctions = {
         ...restProps,
         className: getClassName(restProps),
         icon: icon,
-        cancelButtonProps: { ...restProps.cancelButtonProps, className: 'ant-btn-text' },
+        cancelButtonProps: { className: 'ant-btn-text' },
         closable,
         closeIcon
       })
@@ -84,7 +84,7 @@ export const ModalFunctions = {
         ...restProps,
         className: getClassName(restProps),
         icon: icon,
-        cancelButtonProps: { ...restProps.cancelButtonProps, className: 'ant-btn-text' },
+        cancelButtonProps: { className: 'ant-btn-text' },
         closable,
         closeIcon
       })
@@ -108,7 +108,7 @@ export const ModalFunctions = {
         ...restProps,
         className: getClassName(restProps),
         icon: icon,
-        cancelButtonProps: { ...restProps.cancelButtonProps, className: 'ant-btn-text' },
+        cancelButtonProps: { className: 'ant-btn-text' },
         closable,
         closeIcon
       })

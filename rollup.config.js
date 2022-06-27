@@ -54,7 +54,7 @@ const devConfig = {
       extensions: ['.css'],
       minimize: true,
       inject: {
-        insertAt: 'bottom'
+        insertAt: 'top'
       }
     }),
     typescript(),

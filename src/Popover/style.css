@@ -19,25 +19,17 @@
         }
     }
 
-  &-inner-content > div > p {
+  &-inner-content > div > p:first-child {
     @apply pb-2;
   }
 
-  &-inner-content > div > p:last-child{
-    @apply pb-0;
-  }
-  
-  &-inner-content > div > p {
-    @apply mb-0;
-  }
+    &-inner-content > div > p{
+        @apply mb-0;
+    }
 
-  &-inner-content > div > button{
-    @apply mt-0 !important;
-  }
+    &-title{
+        @apply font-semibold min-w-0;
+        @apply flex justify-center items-center;
+    }
 
-  &-title{
-    @apply font-semibold min-w-0;
-    @apply flex justify-center items-center;
-  }
-  
 }
