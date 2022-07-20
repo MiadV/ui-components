@@ -16,7 +16,7 @@
       }
 
       & > .ant-typography {
-        @apply ml-2 font-semibold text-slate-700 whitespace-nowrap;
+        @apply ml-2 font-semibold text-slate-700 whitespace-nowrap overflow-hidden text-ellipsis;
       }
 
       &-button {

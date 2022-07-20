@@ -3,56 +3,44 @@
 @import '../Button/style.css';
 
 .ant-modal {
-
-  &-content{
+  &-content {
     @apply rounded-lg;
   }
 
-  &-confirm{
-    @apply w-[352px] !important;
-    .ant-modal-body{
+  &-confirm {
+    .ant-modal-body {
       @apply p-4;
     }
 
-    &-content {
-      @apply font-inter leading-5 ml-2 mr-6 mt-1 !important;
-      @apply text-neutral-700 !important;
+    &-body &-title {
+      @apply ml-2 w-72 text-neutral-700 font-bold leading-6;
     }
-  
-    &-title {
-      @apply ml-2 w-72;
-      @apply text-neutral-700 font-bold leading-6 !important;
-    }
-  
-    &-body {
-      @apply text-neutral-700 font-normal !important;
+
+    &-body &-content {
+      @apply font-inter leading-5 ml-2 mr-6 mt-1 text-neutral-700;
     }
   }
 
-  .ant-modal-confirm-btns{
+  .ant-modal-confirm-btns {
     @apply mt-4 mr-4;
 
-    .ant-btn > span{
+    .ant-btn > span {
       @apply leading-5;
     }
   }
 
-  &-close-x{
+  &-close-x {
     @apply w-4 h-4 mt-4 mr-4 leading-4;
 
-    svg{
+    svg {
       @apply text-neutral-400;
     }
   }
 }
 
-.ant-modal.with-icon{
-
-  @apply w-[376px] !important;
-
-  .ant-modal-confirm-body{
-    
-    svg{
+.ant-modal {
+  .ant-modal-confirm-body {
+    svg {
       @apply float-left mr-2;
     }
   }
