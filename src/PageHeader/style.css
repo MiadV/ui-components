@@ -3,6 +3,7 @@
 @import '../Avatar/style.css';
 
 .ant-page-header{
+  
       @apply font-inter p-0;
 
     .ui-page-header{

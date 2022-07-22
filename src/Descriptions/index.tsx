@@ -1,5 +1,5 @@
 import * as React from "react";
-import { default as AntDescriptions, DescriptionsProps as AntDescriptionsProps } from "antd/lib/descriptions";
+import { Descriptions as AntDescriptions, DescriptionsProps as AntDescriptionsProps } from "antd";
 import { DescriptionsItemProps as AntDescriptionsItemProps } from "antd/lib/descriptions/Item";
 
 import "./style.css"
@@ -16,8 +16,8 @@ const Descriptions: React.FC<DescriptionsProps> = (props) => {
 };
 
 Descriptions.defaultProps = {
-  contentStyle:{ minWidth: "224px" },
-  labelStyle:{ minWidth: "224px" }
+  contentStyle: { minWidth: "224px" },
+  labelStyle: { minWidth: "224px" }
 };
 
 export default Descriptions;

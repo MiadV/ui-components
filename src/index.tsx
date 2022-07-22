@@ -55,7 +55,7 @@ export { default as Message, MessageProps } from './Message'
 export { default as Drawer, DrawerProps } from './Drawer'
 export { default as PopConfirm, PopconfirmProps, NoIcon, WarningIcon } from './Popconfirm'
 export { default as AutoComplete, AutoCompleteProps } from './AutoComplete'
-export { default as Tabs, TabsProps, TabPaneProps, renderTabHeader } from './Tabs'
+export { default as Tabs, TabPane, TabsProps, TabPaneProps, renderTabHeader } from './Tabs'
 export { default as Steps, Step, StepsProps, StepProps } from './Steps'
 export { default as Image, ImageProps } from './Image'
 export { default as Modal, ModalFunctions, ModalProps, ModalFuncProps } from './Modal'
@@ -101,7 +101,7 @@ export {
   ResultChildrenProps,
   ResultChildrenContentProps
 } from './Result'
-export { default as Description, DescriptionsItem, DescriptionsProps, DescriptionsItemProps } from './Descriptions'
+export { default as Descriptions, DescriptionsItem, DescriptionsProps, DescriptionsItemProps } from './Descriptions'
 export { default as PageHeader, PageHeaderWrapper, PageHeaderProps, PageHeaderWrapperProps } from './PageHeader'
 export { default as Divider, DividerProps } from './Divider'
 export {
@@ -140,4 +140,4 @@ export { default as BackTop, BackTopProps } from './BackTop'
 export { default as Affix, AffixProps } from './Affix'
 export { default as Mentions, MentionOption, MentionsProps, OptionProps } from './Mentions'
 export { default as InputNumber, InputNumberProps } from './InputNumber'
-export { default as Form, FormItem, FormProps,FormItemProps, } from './Form'
+export { default as Form, FormItem, FormProps, FormItemProps, } from './Form'

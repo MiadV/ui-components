@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Table as AntTable, TableProps as AntTableProps } from 'antd';
 import { ColumnType } from 'antd/lib/table';
-import { SortOrder } from 'antd/lib/table/interface';
+import { SortOrder, TablePaginationConfig } from 'antd/lib/table/interface';
 import { ArrowsDownUp, CaretLeft, CaretRight, Funnel } from 'phosphor-react';
 import { itemRender } from '../Pagination';
 
@@ -17,6 +17,10 @@ export type HeaderWithSortProps<RecordType extends {}> = {
 };
 
 export const FilterIcon = <Funnel size={16} weight="light" />;
+const defaultPagination: TablePaginationConfig = {
+  position: ['bottomCenter'],
+  itemRender: itemRender(<CaretLeft size={16} />, <CaretRight size={16} />)
+}
 
 export const HeaderWithSort = <T extends {}>(props: HeaderWithSortProps<T>) => {
   const { sortColumns, title } = props;
@@ -42,7 +46,8 @@ export const HeaderWithSort = <T extends {}>(props: HeaderWithSortProps<T>) => {
 };
 
 const Table = <T extends {}>(props: TableProps<T>) => {
-  return <AntTable {...props} />;
+  const pagination = props.pagination ? { ...props.pagination, ...defaultPagination } : defaultPagination
+  return <AntTable {...props} pagination={pagination} />;
 };
 
 Table.defaultProps = {
@@ -51,10 +56,6 @@ Table.defaultProps = {
     triggerAsc: 'Sort ascending',
     cancelSort: 'Remove sorting'
   },
-  pagination: {
-    position: ['bottomCenter'],
-    itemRender: itemRender(<CaretLeft size={16} />, <CaretRight size={16} />)
-  }
 };
 
 export default Table;
