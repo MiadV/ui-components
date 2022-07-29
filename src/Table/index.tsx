@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Table as AntTable, TableProps as AntTableProps } from 'antd';
 import { ColumnType } from 'antd/lib/table';
-import { SortOrder, TablePaginationConfig } from 'antd/lib/table/interface';
+import { SortOrder, TableLocale, TablePaginationConfig } from 'antd/lib/table/interface';
 import { ArrowsDownUp, CaretLeft, CaretRight, Funnel } from 'phosphor-react';
 import { itemRender } from '../Pagination';
 
@@ -21,15 +21,16 @@ const defaultPagination: TablePaginationConfig = {
   position: ['bottomCenter'],
   itemRender: itemRender(<CaretLeft size={16} />, <CaretRight size={16} />)
 }
+const defaultLocale: TableLocale = {
+  triggerDesc: 'Sort descending',
+  triggerAsc: 'Sort ascending',
+  cancelSort: 'Remove sorting'
+};
 
 export const HeaderWithSort = <T extends {}>(props: HeaderWithSortProps<T>) => {
   const { sortColumns, title } = props;
   const sortable = sortColumns ? sortColumns.find(item => item.order) : '';
-  const sortClassname = sortable
-    ? sortable.order === 'ascend'
-      ? 'sort-ascend'
-      : 'sort-descend'
-    : '';
+  const sortClassname = sortable ? (sortable.order === 'ascend' ? 'sort-ascend' : 'sort-descend') : '';
 
   return (
     <div
@@ -47,15 +48,8 @@ export const HeaderWithSort = <T extends {}>(props: HeaderWithSortProps<T>) => {
 
 const Table = <T extends {}>(props: TableProps<T>) => {
   const pagination = props.pagination ? { ...props.pagination, ...defaultPagination } : defaultPagination
-  return <AntTable {...props} pagination={pagination} />;
-};
-
-Table.defaultProps = {
-  locale: {
-    triggerDesc: 'Sort descending',
-    triggerAsc: 'Sort ascending',
-    cancelSort: 'Remove sorting'
-  },
-};
+  const locale = props.locale ? { ...props.locale, ...defaultLocale } : defaultLocale;
+  return <AntTable {...props} pagination={pagination} locale={locale} />;
+}
 
 export default Table;
