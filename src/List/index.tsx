@@ -16,7 +16,7 @@ export const ListItemMetaSkeleton = ({ avatar, title, loading, ...restProps }: L
   const skeletonTitle = title || false
   const skeletonLoading = loading
   return (
-    <Skeleton avatar={skeletonAvatar} title={skeletonTitle} loading={skeletonLoading} active>
+    <Skeleton avatar={!!skeletonAvatar} title={!!skeletonTitle} loading={skeletonLoading} active>
       <AntList.Item.Meta avatar={skeletonAvatar} title={skeletonTitle} {...restProps} />
     </Skeleton>
   )

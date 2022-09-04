@@ -1,6 +1,3 @@
-@import '../variables.css';
-@import 'antd/lib/progress/style/index.css';
-
 .ant-progress {
   @apply font-inter;
 }

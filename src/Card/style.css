@@ -1,8 +1,3 @@
-@import 'antd/lib/style/default.css';
-@import 'antd/lib/card/style/index.css';
-@import '../Tabs/style.css';
-@import 'antd/lib/grid/style/index.css';
-
 .ant-card {
   @apply rounded-lg;
   @apply w-[279px];
@@ -24,7 +19,7 @@
     }
   }
   &-body {
-    @apply font-inter text-sm text-neutral-700 ;
+    @apply font-inter text-sm text-neutral-700;
     @apply py-0 px-4;
   }
   &-body > div > p:first-child {
@@ -78,7 +73,7 @@
       @apply px-2 min-h-0;
       .ant-card-head-wrapper > {
         .ant-card-head-title {
-          @apply font-inter font-semibold text-xs text-neutral-700 ;
+          @apply font-inter font-semibold text-xs text-neutral-700;
           @apply pt-2 pb-1 pr-1.5;
         }
         .ant-card-extra {
@@ -87,7 +82,7 @@
       }
     }
     .ant-card-body {
-      @apply font-inter text-xs text-neutral-700 ;
+      @apply font-inter text-xs text-neutral-700;
       @apply py-0 px-2;
     }
     .ant-card-body > div > p {
@@ -108,12 +103,11 @@
       @apply pb-2  pt-2 text-sm !important;
     }
 
-    .ant-tabs-tab + .ant-tabs-tab{
+    .ant-tabs-tab + .ant-tabs-tab {
       @apply ml-6;
     }
   }
 }
-
 
 .with-button {
   .ant-card-head {
@@ -135,15 +129,15 @@
   }
 }
 
-.with-meta-extra{
-  .ant-card-body{
+.with-meta-extra {
+  .ant-card-body {
     @apply flex;
 
-    svg{
+    svg {
       @apply cursor-pointer;
     }
   }
-  .ant-card-meta{
+  .ant-card-meta {
     @apply w-full;
   }
 }

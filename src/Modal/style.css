@@ -1,7 +1,3 @@
-@import 'antd/lib/style/default.css';
-@import 'antd/lib/modal/style/index.css';
-@import '../Button/style.css';
-
 .ant-modal {
   &-content {
     @apply rounded-lg;

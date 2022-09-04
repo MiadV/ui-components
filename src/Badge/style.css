@@ -1,5 +1,3 @@
-@import 'antd/lib/badge/style/index.css';
-
 .ant-badge {
   sup {
     @apply top-[15%] right-[15%];

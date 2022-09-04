@@ -1,7 +1,3 @@
-@import 'antd/lib/style/default.css';
-@import 'antd/lib/layout/style/index.css';
-@import '../Menu/style.css';
-
 .ant-layout {
   background-color: #f0ebee;
   @apply font-inter;

@@ -1,6 +1,3 @@
-@import 'antd/lib/style/default.css';
-@import 'antd/lib/tabs/style/index.css';
-
 .ant-tabs {
   &-nav {
     @apply font-inter text-sm;

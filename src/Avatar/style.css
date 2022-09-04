@@ -1,5 +1,3 @@
-@import 'antd/lib/avatar/style/index.css';
-
 .ant-avatar {
   /* hardcoded to inline-block inside ant design's source code */
   @apply flex !important;

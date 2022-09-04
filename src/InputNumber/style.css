@@ -1,87 +1,74 @@
-@import 'antd/lib/style/default.css';
-@import 'antd/lib/input-number/style/index.css';
+.ant-input-number {
+  @apply font-inter text-sm font-normal text-neutral-700 rounded-lg bg-white;
+  @apply hover:bg-white;
 
-.ant-input-number{
+  .ant-input-number-input {
+    @apply px-4 py-1 h-10;
+    @apply border-[1px] border-transparent border-solid rounded-lg;
+    @apply hover:border-neutral-300;
+    @apply focus:border-neutral-300;
+  }
 
-    @apply font-inter text-sm font-normal text-neutral-700 rounded-lg bg-white;
-    @apply hover:bg-white;
+  /* Disabled Styling */
+  &.ant-input-number-disabled {
+    @apply bg-neutral-100 text-neutral-400;
 
-    .ant-input-number-input{
-        @apply px-4 py-1 h-10;
-        @apply border-[1px] border-transparent border-solid rounded-lg;
-        @apply hover:border-neutral-300;
-        @apply focus:border-neutral-300;
+    .ant-input-number-input {
+      @apply border-none;
+      @apply hover:border-none;
+      @apply focus:border-none;
     }
-
-    /* Disabled Styling */
-    &.ant-input-number-disabled{
-        @apply bg-neutral-100 text-neutral-400;
-
-        .ant-input-number-input{
-            @apply border-none;
-            @apply hover:border-none;
-            @apply focus:border-none;
-        }
-    }
+  }
 }
 
 /* Input Number witg Currency Prefix */
-.ant-input-number-affix-wrapper.ant-input-number-affix-wrapper-borderless{
-    @apply border-transparent;
+.ant-input-number-affix-wrapper.ant-input-number-affix-wrapper-borderless {
+  @apply border-transparent;
 }
 
-.ant-input-number-affix-wrapper{
+.ant-input-number-affix-wrapper {
+  @apply font-inter text-sm font-normal text-neutral-700 rounded-lg bg-white;
+  @apply hover:bg-white hover:border-neutral-300 border-[1px] border-solid !important;
+  @apply focus:bg-white focus:text-neutral-300;
 
-    @apply font-inter text-sm font-normal text-neutral-700 rounded-lg bg-white;
-    @apply hover:bg-white hover:border-neutral-300 border-[1px] border-solid !important;
-    @apply focus:bg-white focus:text-neutral-300;
+  .ant-input-number-prefix {
+    @apply text-neutral-400 leading-5 pr-1 mr-0;
+  }
 
-    .ant-input-number-prefix{
-        @apply text-neutral-400 leading-5 pr-1 mr-0;
-    }
+  .ant-input-number-input {
+    @apply hover:border-transparent focus:border-transparent;
+  }
 
-    .ant-input-number-input{
-        @apply hover:border-transparent focus:border-transparent;
-    }
-
-    /* Disabled Styling */
-    &.ant-input-number-affix-wrapper-disabled{
-
-        @apply bg-neutral-100 text-neutral-400;
-        @apply hover:bg-neutral-100 hover:border-transparent !important;
-
-    }
-
+  /* Disabled Styling */
+  &.ant-input-number-affix-wrapper-disabled {
+    @apply bg-neutral-100 text-neutral-400;
+    @apply hover:bg-neutral-100 hover:border-transparent !important;
+  }
 }
 
 .ant-form-item-has-error {
+  input {
+    @apply text-red-600;
+  }
 
-    input{
-        @apply text-red-600;
+  .ant-input-number-input {
+    @apply border-[1px] border-red-600;
+    @apply hover:border-red-600;
+    @apply focus:border-red-600;
+  }
+
+  .ant-input-number-affix-wrapper {
+    @apply text-red-600 border-red-600;
+    @apply hover:border-red-600 !important;
+    @apply focus:text-red-600;
+
+    .ant-input-number-prefix {
+      @apply text-red-600;
     }
 
-    .ant-input-number-input{
-        @apply border-[1px] border-red-600;
-        @apply hover:border-red-600;
-        @apply focus:border-red-600;
+    .ant-input-number-input {
+      @apply border-transparent;
+      @apply hover:border-transparent focus:border-transparent;
     }
-
-    .ant-input-number-affix-wrapper{
-
-        @apply text-red-600 border-red-600;
-        @apply hover:border-red-600 !important;
-        @apply  focus:text-red-600;
-    
-        .ant-input-number-prefix{
-            @apply text-red-600;
-        }
-    
-        .ant-input-number-input{
-            @apply border-transparent;
-            @apply hover:border-transparent focus:border-transparent;
-        }
-    
-    }
+  }
 }
-
-

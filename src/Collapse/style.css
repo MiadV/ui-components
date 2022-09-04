@@ -1,6 +1,3 @@
-@import 'antd/lib/style/default.css';
-@import 'antd/lib/collapse/style/index.css';
-
 .ant-collapse {
   @apply font-inter;
   @apply border-none;

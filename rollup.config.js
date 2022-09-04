@@ -53,9 +53,7 @@ const devConfig = {
       },
       extensions: ['.css'],
       minimize: true,
-      inject: {
-        insertAt: 'bottom'
-      }
+      extract: true
     }),
     typescript(),
     resolve(),
@@ -71,12 +69,12 @@ const devConfig = {
 
 const prodConfig = {
   ...devConfig,
-	plugins: [...devConfig.plugins, terser()]
-};
+  plugins: [...devConfig.plugins, terser()]
+}
 
 export default [
   // UMD Development
   devConfig,
-	// UMD Production
-	prodConfig  
+  // UMD Production
+  prodConfig
 ]

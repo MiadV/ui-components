@@ -1,5 +1,3 @@
-@import 'antd/lib/alert/style/index.css';
-
 .ant-alert {
   @apply border-none;
   @apply rounded-lg;

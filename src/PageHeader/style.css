@@ -1,58 +1,53 @@
-@import 'antd/lib/page-header/style/index.css';
-@import '../Breadcrumb/style.css';
-@import '../Avatar/style.css';
+.ant-page-header {
+  @apply font-inter p-0;
 
-.ant-page-header{
-  
-      @apply font-inter p-0;
+  .ui-page-header {
+    @apply flex flex-col;
 
-    .ui-page-header{
-        @apply flex flex-col;
-
-        &-title{
-            @apply text-slate-700 text-xl font-bold mb-1;
-        }
-
-        &-subtitle{
-            @apply text-neutral-400 text-sm font-normal;
-        }
+    &-title {
+      @apply text-slate-700 text-xl font-bold mb-1;
     }
 
-    &-heading-left{
-        @apply my-0;
-        .ant-page-header-back{
-            @apply flex;
-        }
+    &-subtitle {
+      @apply text-neutral-400 text-sm font-normal;
     }
+  }
 
-    &-heading-title{
-        @apply text-slate-700 text-xl font-bold mr-0;
+  &-heading-left {
+    @apply my-0;
+    .ant-page-header-back {
+      @apply flex;
     }
+  }
 
-    &-heading-sub-title{
-        @apply text-neutral-400 text-sm font-normal;
+  &-heading-title {
+    @apply text-slate-700 text-xl font-bold mr-0;
+  }
+
+  &-heading-sub-title {
+    @apply text-neutral-400 text-sm font-normal;
+  }
+
+  &-back {
+    &-button {
+      @apply w-10 h-10 rounded-full;
+      @apply flex bg-white !important;
+
+      svg {
+        @apply justify-center self-center w-full;
+      }
+
+      button {
+        @apply text-slate-700 hover:text-slate-700;
+      }
     }
+  }
 
-    &-back{
-        &-button{
-            @apply w-10 h-10 rounded-full ;
-            @apply flex bg-white !important;
+  .ant-breadcrumb + &-heading {
+    @apply mt-4;
+  }
 
-            svg{
-                @apply justify-center self-center w-full;
-            }
-
-            button{
-                @apply text-slate-700 hover:text-slate-700;
-            }
-        }
-    }
-
-    .ant-breadcrumb + &-heading {
-        @apply mt-4;
-    }
-
-    .ant-breadcrumb span:last-child{
-        @apply text-slate-700;
-    }
+  .ant-breadcrumb span:last-child {
+    @apply text-slate-700;
+  }
 }

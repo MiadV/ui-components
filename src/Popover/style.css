@@ -1,6 +1,3 @@
-@import 'antd/lib/style/default.css';
-@import 'antd/lib/popover/style/index.css';
-
 .ant-popover {
   &-content {
     @apply w-40;
@@ -11,33 +8,32 @@
     @apply font-inter text-slate-700 text-xs;
   }
 
-    &-inner-content{
-        @apply p-2;
+  &-inner-content {
+    @apply p-2;
 
-        button{
-          @apply mr-0;
-        }
+    button {
+      @apply mr-0;
     }
+  }
 
   &-inner-content > div > p {
     @apply pb-2;
   }
 
-  &-inner-content > div > p:last-child{
+  &-inner-content > div > p:last-child {
     @apply pb-0;
   }
-  
+
   &-inner-content > div > p {
     @apply mb-0;
   }
 
-  &-inner-content > div > button{
+  &-inner-content > div > button {
     @apply mt-0 !important;
   }
 
-  &-title{
+  &-title {
     @apply font-semibold min-w-0;
     @apply flex justify-center items-center;
   }
-  
 }

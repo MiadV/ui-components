@@ -1,7 +1,3 @@
-@import 'antd/lib/style/default.css';
-@import 'antd/lib/pagination/style/index.css';
-@import '../Select/style.css';
-
 .ant-pagination {
   &-item {
     @apply font-inter text-neutral-500 text-base rounded-full bg-transparent border-none;

@@ -1,6 +1,3 @@
-@import 'antd/lib/style/default.css';
-@import 'antd/lib/comment/style/index.css';
-
 .ant-comment {
   @apply font-inter;
 

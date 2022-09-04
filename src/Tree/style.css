@@ -1,6 +1,3 @@
-@import 'antd/lib/style/default.css';
-@import 'antd/lib/tree/style/index.css';
-
 .ant-tree {
   .ant-tree-treenode {
     @apply items-center;

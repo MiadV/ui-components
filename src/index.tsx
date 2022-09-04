@@ -1,3 +1,4 @@
+import './index.css'
 export {
   default as List,
   ListItem,
@@ -140,4 +141,4 @@ export { default as BackTop, BackTopProps } from './BackTop'
 export { default as Affix, AffixProps } from './Affix'
 export { default as Mentions, MentionOption, MentionsProps, OptionProps } from './Mentions'
 export { default as InputNumber, InputNumberProps } from './InputNumber'
-export { default as Form, FormItem, FormProps, FormItemProps, } from './Form'
+export { default as Form, FormItem, FormProps, FormItemProps } from './Form'

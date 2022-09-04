@@ -1,6 +1,3 @@
-@import 'antd/lib/style/default.css';
-@import 'antd/lib/result/style/index.css';
-
 .ant-result {
   @apply font-inter m-auto px-0 flex flex-col items-center;
 

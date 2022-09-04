@@ -1,5 +1,3 @@
-@import 'antd/lib/timeline/style/index.css';
-
 .ant-timeline {
   .ant-timeline-item {
     @apply pb-2.5;

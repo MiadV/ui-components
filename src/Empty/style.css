@@ -1,5 +1,3 @@
-@import 'antd/lib/empty/style/index.css';
-
 .ant-empty {
   @apply h-full;
   @apply flex flex-col justify-center items-center;

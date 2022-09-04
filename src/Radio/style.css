@@ -1,7 +1,3 @@
-
-@import 'antd/lib/style/default.css';
-@import 'antd/lib/radio/style/index.css';
-
 .ant-radio {
   &:hover {
     .ant-radio-inner {

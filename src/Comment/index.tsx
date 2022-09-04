@@ -31,7 +31,7 @@ export type CommentListCommentsTypes = {
   key: string
   author: string
   avatar: React.ReactElement
-  children?: CommentListCommentsTypes[]
+  children?: React.ReactNode
   content: React.ReactNode
   datetime: string
 }
